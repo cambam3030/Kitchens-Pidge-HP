@@ -10,7 +10,7 @@ import byui.cit260.harryPotter.model.CharacterScene;
 import byui.cit260.harryPotter.model.HousePoints;
 import byui.cit260.harryPotter.model.Location;
 import byui.cit260.harryPotter.model.Player;
-import byui.cit260.harryPotter.model.RescourseTypeScene;
+import byui.cit260.harryPotter.model.ResourceTypeScene;
 import byui.cit260.harryPotter.model.Scene;
 
 /**
@@ -79,7 +79,7 @@ public class HarryPotter {
       characterScene.setMet("Met");
       characterScene.setAmountRemaining(100);
       
-      RescourseTypeScene resourceType = new RescourseTypeScene();
+      ResourceTypeScene resourceType = new ResourceTypeScene();
       
       resourceType.setResourceType ("School Supplies");
       resourceType.setAmountAvailable(5);
