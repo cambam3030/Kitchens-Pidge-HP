@@ -8,6 +8,7 @@ package harrypotter;
 import byui.cit260.harryPotter.model.Character;
 import byui.cit260.harryPotter.model.CharacterScene;
 import byui.cit260.harryPotter.model.HousePoints;
+import byui.cit260.harryPotter.model.Inventory;
 import byui.cit260.harryPotter.model.Location;
 import byui.cit260.harryPotter.model.Player;
 import byui.cit260.harryPotter.model.ResourceTypeScene;
@@ -85,6 +86,14 @@ public class HarryPotter {
       resourceType.setAmountAvailable(5);
       
       
+      Inventory playerInventory = new Inventory();
+      
+      playerInventory.setName("Player Inventory");
+      playerInventory.setAmountNeeded(5);
+      playerInventory.setStockAvailable(4);
+      
+      String playerInventoryInfo = playerInventory.toString();
+      System.out.println(playerInventoryInfo);
       
     }
     
