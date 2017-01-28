@@ -7,12 +7,17 @@ package harrypotter;
 
 import byui.cit260.harryPotter.model.Character;
 import byui.cit260.harryPotter.model.CharacterScene;
+import byui.cit260.harryPotter.model.Game;
 import byui.cit260.harryPotter.model.HousePoints;
 import byui.cit260.harryPotter.model.Inventory;
 import byui.cit260.harryPotter.model.Location;
+import byui.cit260.harryPotter.model.Map;
 import byui.cit260.harryPotter.model.Player;
+import byui.cit260.harryPotter.model.Potions;
+import byui.cit260.harryPotter.model.Quidditch;
 import byui.cit260.harryPotter.model.ResourceTypeScene;
 import byui.cit260.harryPotter.model.Scene;
+import byui.cit260.harryPotter.model.Spells;
 
 /**
  *
@@ -95,6 +100,48 @@ public class HarryPotter {
       String playerInventoryInfo = playerInventory.toString();
       System.out.println(playerInventoryInfo);
       
+      Potions playerPotions = new Potions();
+      playerPotions.setName("Felix Felices");
+      playerPotions.setEffect("Grants luck");
+      playerPotions.setAmountNeeded(2);
+      playerPotions.setStockAvailable(1);
+      playerPotions.setIngredients("Lots of brewing time");
+      
+      String playerPotionsInfo = playerPotions.toString();
+      System.out.println(playerPotionsInfo);
+      
+      Quidditch playerQuidditch = new Quidditch();
+      playerQuidditch.setName("Broom");
+      playerQuidditch.setName("Nimbus 2000");
+      playerQuidditch.setAmountNeeded(1);
+      playerQuidditch.setStockAvailable(1);
+      playerQuidditch.setSpeed(10);
+      
+      String playerQuidditchInfo = playerQuidditch.toString();
+      System.out.println(playerQuidditchInfo);
+      
+      Spells playerSpells = new Spells();
+      playerSpells.setEffect("Creates light.");
+      playerSpells.setAmountNeeded(1);
+      playerSpells.setStockAvailable(1);
+      playerSpells.setName("Lumos");
+      
+      String playerSpellsInfo = playerSpells.toString();
+      System.out.println(playerSpellsInfo);
+      
+      Game playerGame = new Game();
+      playerGame.setNoPeople(1);
+      playerGame.setTotalTime(50);
+      
+      String playerGameInfo = playerGame.toString();
+      System.out.println(playerGameInfo);
+      
+      Map playerMap = new Map();
+      playerMap.setColumnCount(2);
+      playerMap.setRowCount(4);
+      
+      String playerMapInfo = playerMap.toString();
+      System.out.println(playerMapInfo);
     }
     
 }

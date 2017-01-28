@@ -5,10 +5,11 @@
  */
 package byui.cit260.harryPotter.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class ResourceTypeScene extends Scene {
+public class ResourceTypeScene extends Scene implements Serializable{
     
 
     public ResourceTypeScene() {
