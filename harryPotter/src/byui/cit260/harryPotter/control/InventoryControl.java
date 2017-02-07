@@ -10,7 +10,26 @@ package byui.cit260.harryPotter.control;
  * @author Cami
  */
 public class InventoryControl {
-     
+    
+    public double calcBroomSpeed(double distance, double broomSpeed){
+        // Calculate time it would take to catch up to snitch depending on broom speed and distance.
+        
+        // establish constant value for snitch
+        double SNITCH = 50;
+        // check broom speed; needs to be above 60 and under 200
+        if (broomSpeed < 60 || broomSpeed > 200) {
+		return -1;
+        }
+        // check distance; needs to be at least 0 and not greater than 500
+	if (distance < 0 || distance > 500) {
+		return -1;
+        }
+	double time = distance / ((broomSpeed - SNITCH) / 3);
+
+	return time;
+
+    }
+    
     public double moneyExchange(double galleons, double sickles){
       //Convert galleons and sickles into dollars  
 

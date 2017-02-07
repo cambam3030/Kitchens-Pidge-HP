@@ -26,7 +26,146 @@ public class InventoryControlTest {
     @After
     public void tearDown() {
     }
+    
+    /**
+     * Test of calcBroomSpeed method, of class InventoryControl.
+     */
+    @Test
+    public void testCalcBroomSpeed() {
+        System.out.println("calcBroomSpeed");
+        
+        /***********************
+         * Test Case #1
+         **********************/
+        System.out.println("\tTest Case #1");
+        
+        //input values for test case 1
+        double distance = 100;
+        double broomSpeed = 150;
+        
+        //expected output
+        double expResult = 3;
+        
+        //create instance of InventoryControl class
+        InventoryControl instance = new InventoryControl();
+        
+        //call function to run test
+        double result = instance.calcBroomSpeed(distance, broomSpeed);
+        
+        //compare expected return value with actual return value
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         * Test Case #2
+         **********************/
+        System.out.println("\tTest Case #2");
+        
+        //input values for test case 2
+        distance = 100;
+        broomSpeed = 20;
+        
+        //expected output
+        expResult = -1;       
+        
+        //call function to run test
+        result = instance.calcBroomSpeed(distance, broomSpeed);
+        
+        //compare expected return value with actual return value
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         * Test Case #3
+         **********************/
+        System.out.println("\tTest Case #3");
+        
+        //input values for test case 3
+        distance = 100;
+        broomSpeed = 201;
+        
+        //expected output
+        expResult = -1;       
+        
+        //call function to run test
+        result = instance.calcBroomSpeed(distance, broomSpeed);
+        
+        //compare expected return value with actual return value
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         * Test Case #4
+         **********************/
+        System.out.println("\tTest Case #4");
+        
+        //input values for test case 4
+        distance = -1;
+        broomSpeed = 100;
+        
+        //expected output
+        expResult = -1;       
+        
+        //call function to run test
+        result = instance.calcBroomSpeed(distance, broomSpeed);
+        
+        //compare expected return value with actual return value
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         * Test Case #5
+         **********************/
+        System.out.println("\tTest Case #5");
+        
+        //input values for test case 5
+        distance = 10;
+        broomSpeed = 60;
+        
+        //expected output
+        expResult = 3;       
+        
+        //call function to run test
+        result = instance.calcBroomSpeed(distance, broomSpeed);
+        
+        //compare expected return value with actual return value
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         * Test Case #6
+         **********************/
+        System.out.println("\tTest Case #6");
+        
+        //input values for test case 6
+        distance = 500;
+        broomSpeed = 100;
+        
+        //expected output
+        expResult = 30;       
+        
+        //call function to run test
+        result = instance.calcBroomSpeed(distance, broomSpeed);
+        
+        //compare expected return value with actual return value
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         * Test Case #7
+         **********************/
+        System.out.println("\tTest Case #7");
+        
+        //input values for test case 7
+        distance = 0;
+        broomSpeed = 100;
+        
+        //expected output
+        expResult = 0;       
+        
+        //call function to run test
+        result = instance.calcBroomSpeed(distance, broomSpeed);
+        
+        //compare expected return value with actual return value
+        assertEquals(expResult, result, 0.0001);
 
+        
+    }
+    
     /**
      * Test of moneyExchange method, of class InventoryControl.
      */
@@ -157,5 +296,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.01);
         
     }
+
+
     
 }
