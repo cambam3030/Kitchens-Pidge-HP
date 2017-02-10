@@ -197,7 +197,7 @@ public class InventoryControlTest {
          * Test case two
          ************************/
        System.out.println("\tTest case #2");
-       //input calues for test case 2
+       //input values for test case 2
          galleons = -1;
          sickles = 1;
         
@@ -211,11 +211,11 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.01);
         
         
-              /************************
+         /************************
          * Test case three
          ************************/
        System.out.println("\tTest case #3");
-       //input calues for test case 3
+       //input values for test case 3
          galleons = 1;
          sickles = -1;
         
@@ -228,11 +228,11 @@ public class InventoryControlTest {
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
         
-              /************************
+        /************************
          * Test case four
          ************************/
        System.out.println("\tTest case #4");
-       //input calues for test case 4
+       //input values for test case 4
          galleons = 1001;
          sickles = 1;
         
@@ -244,11 +244,12 @@ public class InventoryControlTest {
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
-              /************************
+         
+        /************************
          * Test case five
          ************************/
        System.out.println("\tTest case #5");
-       //input calues for test case 5
+       //input values for test case 5
          galleons = 0;
          sickles = 10;
         
@@ -261,11 +262,11 @@ public class InventoryControlTest {
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
         
-              /************************
+         /************************
          * Test case six
          ************************/
        System.out.println("\tTest case #6");
-       //input calues for test case 6
+       //input values for test case 6
          galleons = 10;
          sickles = 0;
         
@@ -278,11 +279,11 @@ public class InventoryControlTest {
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
         
-              /************************
+         /************************
          * Test case seven
          ************************/
        System.out.println("\tTest case #7");
-       //input calues for test case 7
+       //input values for test case 7
          galleons = 1000;
          sickles = 4;
         
@@ -294,6 +295,131 @@ public class InventoryControlTest {
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
+        
+    }
+
+    /**
+     * Test of calcPolyJuice method, of class InventoryControl.
+     */
+    @Test
+    public void testCalcPolyJuice() {
+        System.out.println("calcPolyJuice");
+        
+         /************************
+         * Test case one
+         ************************/
+         System.out.println("\tTest case #1");
+         //input values for test case 1
+        double weight = 150;
+        double time = 60;
+        
+        double expResult = 14.256; // expectd output returned value
+        
+         //create instance of InventoryControl class
+        InventoryControl instance = new InventoryControl();
+        //call function to run test
+        double result = instance.calcPolyJuice(weight, time);
+        
+         //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.001);
+       
+         /************************
+         * Test case two
+         ************************/
+         System.out.println("\tTest case #2");
+         //input values for test case 2
+         weight = 50;
+         time = 60;
+        
+         expResult = -1; // expectd output returned value
+                
+        //call function to run test
+         result = instance.calcPolyJuice(weight, time);
+        
+         //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.001);
+        
+        
+         /************************
+         * Test case three
+         ************************/
+       System.out.println("\tTest case #3");
+       //input values for test case 3
+        weight = 150;
+         time = 200;
+        
+         expResult = -1; // expectd output returned value
+                
+        //call function to run test
+         result = instance.calcPolyJuice(weight, time);
+        
+         //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.001);
+        
+         /************************
+         * Test case four
+         ************************/
+         System.out.println("\tTest case #4");
+       //input values for test case 4
+          weight = 401;
+         time = 60;
+        
+         expResult = -1; // expectd output returned value
+                
+        //call function to run test
+         result = instance.calcPolyJuice(weight, time);
+        
+         //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.001);
+        
+         
+         /************************
+         * Test case five
+         ************************/
+       System.out.println("\tTest case #5");
+       //input values for test case 5
+        weight = 100;
+         time = 190;
+        
+         expResult = 30.096; // expectd output returned value
+                
+        //call function to run test
+         result = instance.calcPolyJuice(weight, time);
+        
+         //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.001);
+       
+         /************************
+         * Test case six
+         ************************/
+       System.out.println("\tTest case #6");
+       //input values for test case 6
+        weight = 200;
+         time = 60;
+        
+         expResult = 19.008; // expectd output returned value
+                
+        //call function to run test
+         result = instance.calcPolyJuice(weight, time);
+        
+         //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.001);
+       
+       /************************
+         * Test case seven
+         ************************/
+       System.out.println("\tTest case #7");
+       //input values for test case 7
+        weight = 400;
+         time = 80;
+        
+         expResult = 50.688; // expectd output returned value
+                
+        //call function to run test
+         result = instance.calcPolyJuice(weight, time);
+        
+         //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.001);
         
     }
 
