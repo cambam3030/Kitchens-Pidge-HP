@@ -15,7 +15,7 @@ public class InventoryControl {
         // Calculate time it would take to catch up to snitch depending on broom speed and distance.
         
         // establish constant value for snitch
-        double SNITCH = 50;
+        final double SNITCH = 50;
         // check broom speed; needs to be above 60 and under 200
         if (broomSpeed < 60 || broomSpeed > 200) {
 		return -1;

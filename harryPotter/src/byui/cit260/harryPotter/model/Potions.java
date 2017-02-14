@@ -45,12 +45,11 @@ public class Potions extends Inventory implements Serializable{
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
+        if (super.equals(obj) == false){
+            // no point continuing if isn't true from this point (super)
             return false;
         }
+        
         if (getClass() != obj.getClass()) {
             return false;
         }
@@ -65,8 +64,10 @@ public class Potions extends Inventory implements Serializable{
     }
 
     @Override
+    // adds super toString
     public String toString() {
-        return "Potions{" + "ingredients=" + ingredients + ", effect=" + effect + '}';
+        return "Potions{" + super.toString() + ", ingredients=" + ingredients 
+                + ", effect=" + effect + '}';
     }
     
     
