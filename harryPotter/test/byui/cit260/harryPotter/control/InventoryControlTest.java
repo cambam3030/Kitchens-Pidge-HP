@@ -177,7 +177,7 @@ public class InventoryControlTest {
          * Test case one
          ************************/
        System.out.println("\tTest case #1");
-       //input calues for test case 1
+       //input values for test case 1
         double galleons = 4;
         double sickles = 2;
         
