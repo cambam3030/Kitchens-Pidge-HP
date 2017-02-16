@@ -5,10 +5,17 @@
  */
 package byui.cit260.harryPotter.control;
 
+import byui.cit260.harryPotter.model.Player;
+
 /**
  *
  * @author Cami
  */
 public class GameControl {
+
+    public static Player createPlayer(String playersName) {
+        System.out.println("\n*** createPlayer() function called ***");
+        return new Player();
+    }
     
 }
