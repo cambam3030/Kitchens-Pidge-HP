@@ -6,6 +6,7 @@
 package byui.cit260.harryPotter.control;
 
 import byui.cit260.harryPotter.model.Player;
+import harrypotter.HarryPotter;
 
 /**
  *
@@ -13,9 +14,18 @@ import byui.cit260.harryPotter.model.Player;
  */
 public class GameControl {
 
-    public static Player createPlayer(String playersName) {
-        System.out.println("\n*** createPlayer() function called ***");
-        return new Player();
+    public static Player createPlayer(String name) {
+       
+        if (name == null){
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(name);
+        
+        HarryPotter.setPlayer(player); //save the player
+        
+        return player;
     }
     
 }

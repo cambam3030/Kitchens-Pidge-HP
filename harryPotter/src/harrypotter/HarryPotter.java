@@ -25,14 +25,31 @@ import byui.cit260.harryPotter.view.StartProgramView;
  * @author Cami
  */
 public class HarryPotter {
-
-    /**
+    private static Game currentGame = null;
+    private static Player player = null;
+        /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
        // create StartProgramViewOrg and display start program view
        StartProgramView startProgramView = new StartProgramView();
        startProgramView.displayStartProgramView();
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        HarryPotter.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        HarryPotter.player = player;
     }
     
 }
