@@ -94,14 +94,17 @@ public class HelpMenuView {
 
     private void howToPlay() {
          System.out.println("\n*** The howToPlay() function was called**");
+          this.displayHelpMenuView();
     }
 
     private void howToMovement() {
          System.out.println("\n*** The howToMovement() function was called**");
+         this.displayHelpMenuView();
     }
 
     private void whereAmI() {
          System.out.println("\n*** The whereAmI() function was called**");
+          this.displayHelpMenuView();
     }
 
    
