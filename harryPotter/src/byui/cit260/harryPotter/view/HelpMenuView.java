@@ -13,20 +13,20 @@ import java.util.Scanner;
  *
  * @author Cami
  */
-public class MainMenuView {
+public class HelpMenuView {
    private String menu;
    
    /**
     * displays the start program view
     */
 
-  public void displayMainMenuView() {
+  public void displayHelpMenuView() {
        
       boolean done = false; // set flag to not done
       do{ 
           // prompt for and get players name
           String menuOption = this.getMenuOption();
-          if (menuOption.toUpperCase().equals ("Q")) // user wants to quit
+          if (menuOption.toUpperCase().equals ("R")) // user wants to quit
               return; // exit the game
           
           // do the requested action and sisplay the next view
@@ -34,16 +34,15 @@ public class MainMenuView {
       } while (!done);
     }
 
-    public MainMenuView() {
+    public HelpMenuView() {
      this.menu = "\n"
                + "\n------------------------------------------"
-               + "\n| Main Menu                              |"
+               + "\n| Help Menu                              |"
                + "\n------------------------------------------"
-               + "\nN - Start new game"
-               + "\nG - Get and start saved game"
-               + "\nH - Get help on how to play the game"
-               + "\nS - Save game"
-               + "\nQ - Quit"
+               + "\nH - How to Play"
+               + "\nM - Movement"
+               + "\nW - Where am I?"
+               + "\nR - Return"
                + "\n------------------------------------------";
     }
     private String getMenuOption() {
@@ -75,18 +74,15 @@ public class MainMenuView {
         choice = choice.toUpperCase(); //convert choice to upper case
         
         switch (choice){
-            case "N": //get and start an existing game
-                this.startNewGame();
+            case "H": //instructions on how to play and the goal of the game
+                this.howToPlay();
                 break;
-            case "G": //get and start an existing game
-                this.startExistingGame();
+            case "M": //how to move
+                this.howToMovement();
                 break;
-            case "H":// display the help menu
-                this.displayHelpMenuView();
-                break;
-            case "S": //save the current game
-                this.saveGame();
-                break;
+            case "W":// display user's current location
+                this.whereAmI();
+                break;         
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -95,32 +91,20 @@ public class MainMenuView {
         
     }
 
-    private void startNewGame() {
-       // create a new game
-       GameControl.createNewGame(HarryPotter.getPlayer());
-       
-       //display the game menu
-       GameMenuView gameMenu = new GameMenuView();
-       gameMenu.displayMenu();
+
+    private void howToPlay() {
+         System.out.println("\n*** The howToPlay() function was called**");
     }
 
-    private void startExistingGame() {
-        System.out.println("\n*** The startExistingGame() function was called"); 
+    private void howToMovement() {
+         System.out.println("\n*** The howToMovement() function was called**");
     }
 
-    private void displayHelpMenuView() {
-        //display the help menu
-       HelpMenuView helpMenuView = new HelpMenuView();
-       helpMenuView.displayHelpMenuView();
-    }
-
-    private void saveGame() {
-        System.out.println("\n*** The saveGame() function was called"); 
+    private void whereAmI() {
+         System.out.println("\n*** The whereAmI() function was called**");
     }
 
    
     
  
     }
-    
-
