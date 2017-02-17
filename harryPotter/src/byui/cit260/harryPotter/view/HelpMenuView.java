@@ -5,8 +5,6 @@
  */
 package byui.cit260.harryPotter.view;
 
-import byui.cit260.harryPotter.control.GameControl;
-import harrypotter.HarryPotter;
 import java.util.Scanner;
 
 /**
