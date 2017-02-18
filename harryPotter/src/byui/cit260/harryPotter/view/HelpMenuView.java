@@ -22,7 +22,7 @@ public class HelpMenuView {
        
       boolean done = false; // set flag to not done
       do{ 
-          // prompt for and get players name
+          // prompt for and get players selection
           String menuOption = this.getMenuOption();
           if (menuOption.toUpperCase().equals ("R")) // user wants to quit
               return; // exit the game
@@ -80,7 +80,10 @@ public class HelpMenuView {
                 break;
             case "W":// display user's current location
                 this.whereAmI();
-                break;         
+                break;
+            case "R"://return to main menu
+                this.returnToMain();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -103,6 +106,11 @@ public class HelpMenuView {
     private void whereAmI() {
          System.out.println("\n*** The whereAmI() function was called**");
           this.displayHelpMenuView();
+    }
+
+    private void returnToMain() {
+         MainMenuView mainMenu = new MainMenuView();
+         mainMenu.displayMainMenuView();
     }
 
    
