@@ -21,15 +21,20 @@ public class HelpMenuView {
   public void displayHelpMenuView() {
        
       boolean done = false; // set flag to not done
-      do{ 
+      while (done == false) {
+          String menuOption = this.getMenuOption();
+          done = this.doAction(menuOption);
+      }
+      
+      /*do{ 
           // prompt for and get players selection
           String menuOption = this.getMenuOption();
           if (menuOption.toUpperCase().equals ("R")) // user wants to quit
-              return; // exit the game
+              done = true; // exit the game
           
-          // do the requested action and sisplay the next view
+          // do the requested action and display the next view
           done = this.doAction(menuOption);
-      } while (!done);
+      } while (!done);*/
     }
 
     public HelpMenuView() {
@@ -70,6 +75,7 @@ public class HelpMenuView {
     private boolean doAction(String choice) {
         
         choice = choice.toUpperCase(); //convert choice to upper case
+        boolean done = false;
         
         switch (choice){
             case "H": //instructions on how to play and the goal of the game
@@ -82,38 +88,32 @@ public class HelpMenuView {
                 this.whereAmI();
                 break;
             case "R"://return to main menu
-                this.returnToMain();
-                break;
+                done = true;
+                System.out.println("\n*** Returning ***");
+                return done;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        return false;
+        return done;
         
     }
 
 
     private void howToPlay() {
          System.out.println("\n*** The howToPlay() function was called**");
-          this.displayHelpMenuView();
+          
     }
 
     private void howToMovement() {
          System.out.println("\n*** The howToMovement() function was called**");
-         this.displayHelpMenuView();
+         
     }
 
     private void whereAmI() {
          System.out.println("\n*** The whereAmI() function was called**");
-          this.displayHelpMenuView();
+          
     }
 
-    private void returnToMain() {
-         MainMenuView mainMenu = new MainMenuView();
-         mainMenu.displayMainMenuView();
-    }
 
-   
-    
- 
     }

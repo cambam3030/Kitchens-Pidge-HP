@@ -84,7 +84,7 @@ public class StartProgramView {
                 continue; 
             }
         
-            break; // end loop
+            valid = true; // end loop
         
         }
         return value; // return value entered
