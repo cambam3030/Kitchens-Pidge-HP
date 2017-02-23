@@ -58,7 +58,7 @@ public class LocationPitch {
             speed = keyboard.nextDouble(); // get next line typed on keyboard
             
         
-            if(speed < 60 || speed > 200) { // value is blank
+            if(speed < 60 || speed > 200) { // checks for valid speed
                 System.out.println("\n Invalid value: speed cannot be less than 60 or more than 200"
                         + "Please enter your desired speed:");
                 continue; 
@@ -83,7 +83,7 @@ public class LocationPitch {
             distance = keyboard.nextDouble(); // get next line typed on keyboard
             
         
-            if(distance < 0 || distance > 500) { // value is blank
+            if(distance < 0 || distance > 500) { // checks for valid distance
                 System.out.println("\n Invalid value: distance cannot be 0 or more than 500"
                         + "\n Please enter the desired distance:");
                 continue; 
