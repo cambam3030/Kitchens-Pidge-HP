@@ -10,6 +10,11 @@ import java.util.Scanner;
  *
  * @author chriskitchens
  */
+
+/*
+* accessed from Gameplay Menu
+*/
+
 public class SpellsMenuView {
     private String menu;
     

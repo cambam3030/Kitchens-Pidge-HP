@@ -10,6 +10,9 @@ package byui.cit260.harryPotter.control;
  * @author Cami
  */
 public class InventoryControl {
+    
+    public double qTime;
+    
        public double calcPolyJuice(double weight, double time){
         // Calculate the amount of Polyjuice potion the user will need to complete a task.
       
@@ -40,9 +43,9 @@ public class InventoryControl {
 	if (distance < 0 || distance > 500) {
 		return -1;
         }
-	double time = distance / ((broomSpeed - SNITCH) / 3);
+	qTime = distance / ((broomSpeed - SNITCH) / 3);
 
-	return time;
+	return qTime;
 
     }
     
