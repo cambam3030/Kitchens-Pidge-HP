@@ -42,6 +42,7 @@ public class MainMenuView {
                + "\nN - Start new game"
                + "\nG - Get and start saved game"
                + "\nH - Get help on how to play the game"
+               + "\nGP- Game Play Menu"
                + "\nS - Save game"
                + "\nQ - Quit"
                + "\n------------------------------------------";
@@ -84,6 +85,9 @@ public class MainMenuView {
             case "H":// display the help menu
                 this.displayHelpMenuView();
                 break;
+            case "GP"://Display Game Play Menu
+                this.displayGameMenuView();
+                break;
             case "S": //save the current game
                 this.saveGame();
                 break;
@@ -113,7 +117,11 @@ public class MainMenuView {
        HelpMenuView helpMenuView = new HelpMenuView();
        helpMenuView.displayHelpMenuView();
     }
-
+    private void displayGameMenuView() {
+        //display the help menu
+       GameMenuView gameMenuView = new GameMenuView();
+       gameMenuView.displayGameMenuView();
+    }
     private void saveGame() {
         System.out.println("\n*** The saveGame() function was called"); 
     }

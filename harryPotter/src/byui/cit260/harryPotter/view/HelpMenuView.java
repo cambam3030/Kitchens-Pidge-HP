@@ -20,11 +20,11 @@ public class HelpMenuView {
 
   public void displayHelpMenuView() {
        
-      boolean done = false; // set flag to not done
+    boolean done = false; // set flag to not done
       while (done == false) {
           String menuOption = this.getMenuOption();
           done = this.doAction(menuOption);
-      }
+      }  
       
       /*do{ 
           // prompt for and get players selection

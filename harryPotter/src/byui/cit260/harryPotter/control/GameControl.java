@@ -24,8 +24,8 @@ public class GameControl {
         player.setName(name);
         
         HarryPotter.setPlayer(player); //save the player
-        
-        return player;
+      
+             return player;
     }
 
     public static void createNewGame(Player player) {
