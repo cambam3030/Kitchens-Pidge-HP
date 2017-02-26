@@ -24,8 +24,8 @@ public class HelpMenuView {
       while (done == false) {
           String menuOption = this.getMenuOption();
           done = this.doAction(menuOption);
-      }  
-      
+      }
+      // confusing code from instructions...
       /*do{ 
           // prompt for and get players selection
           String menuOption = this.getMenuOption();

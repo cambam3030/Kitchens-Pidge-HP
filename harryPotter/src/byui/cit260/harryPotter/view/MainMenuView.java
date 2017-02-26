@@ -85,6 +85,8 @@ public class MainMenuView {
             case "H":// display the help menu
                 this.displayHelpMenuView();
                 break;
+            case "T"://test for LocationPitch class -- this will not be included here and is only used as test
+                this.displayLocationPitchView();
             case "GP"://Display Game Play Menu
                 this.displayGameMenuView();
                 break;
@@ -124,6 +126,16 @@ public class MainMenuView {
     }
     private void saveGame() {
         System.out.println("\n*** The saveGame() function was called"); 
+    }
+
+    private void displayLocationPitchView() {
+         LocationPitch locationPitch = new LocationPitch();
+         locationPitch.displayLocationPitchView();
+    }
+    
+    private void displayLocationDungeonView() {
+         LocationDungeon locationDungeon = new LocationDungeon();
+         locationDungeon.displayLocationDungeonView();
     }
 
    
