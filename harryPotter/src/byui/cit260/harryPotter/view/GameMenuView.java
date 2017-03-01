@@ -7,41 +7,21 @@ package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.control.GameControl;
 import harrypotter.HarryPotter;
-import java.util.Scanner;
+
 
 /**
  *
  * @author Cami
  */
-public class GameMenuView {
+public class GameMenuView extends View{
 
-   private String menu;
-   
    /**
     * displays the game menu view
     */
 
-  public void displayGameMenuView() {
-       
-    boolean done = false; // set flag to not done
-      while (done == false) {
-          String menuOption = this.getMenuOption();
-          done = this.doAction(menuOption);
-      }  
-      
-      /*do{ 
-          // prompt for and get players selection
-          String menuOption = this.getMenuOption();
-          if (menuOption.toUpperCase().equals ("R")) // user wants to quit
-              done = true; // exit the game
-          
-          // do the requested action and display the next view
-          done = this.doAction(menuOption);
-      } while (!done);*/
-    }
 
     public GameMenuView() {
-     this.menu = "\n"
+     super("\n"
                + "\n------------------------------------------"
                + "\n| Game Menu                              |"
                + "\n------------------------------------------"
@@ -52,31 +32,10 @@ public class GameMenuView {
                + "\nS - Save"
                + "\nH -  Help Menu"
                + "\nE -  Exit"
-               + "\n------------------------------------------";
+               + "\n------------------------------------------");
     }
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get inFile for keyboard
-        String choice = ""; // value to be returned
-        boolean valid = false; // initialized not valid
-        
-        while(!valid){ // loop while invalid value is entered
-            System.out.println("\n"+ this.menu);
-        
-            choice = keyboard.nextLine(); // get next line typed on keyboard
-            choice = choice.trim(); // trim off leading and trailing blanks
-        
-            if(choice.length()<1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue; 
-            }
-        
-            break; // end loop
-        
-        }
-        return choice; // return value entered
-            
-    }               
-    private boolean doAction(String choice) {
+@Override        
+    public boolean doAction(String choice) {
         
         choice = choice.toUpperCase(); //convert choice to upper case
      boolean done = false;    

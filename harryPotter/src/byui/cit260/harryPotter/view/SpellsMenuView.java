@@ -15,24 +15,24 @@ import java.util.Scanner;
 * accessed from Gameplay Menu
 */
 
-public class SpellsMenuView {
-    private String menu;
+public class SpellsMenuView extends View {
+
     
     /**
      * displays spells menu view
      */
     
-    public void displaySpellsMenuView() {
+/*    public void displaySpellsMenuView() {
         
         boolean done = false; // begin false for loop
         while (done == false) {
             String menuOption = this.getMenuOption();
             done = this.doAction(menuOption);
         }
-    }
+    } */
     
     public SpellsMenuView() {
-        this.menu = "\n"
+        super("\n"
                 + "\n----------------------------------------------------------"
                 + "\n| Spells Menu                                            |"
                 + "\n----------------------------------------------------------"
@@ -46,32 +46,12 @@ public class SpellsMenuView {
                 + "\n FX - Reparo"
                 + "\n PR - Protego"
                 + "\n\t *R  - Return to previous menu*"
-                + "\n----------------------------------------------------------";
+                + "\n----------------------------------------------------------");
     }
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get inFile for keyboard
-        String choice = ""; // value to be returned
-        boolean valid = false; // initialized not valid
-        
-        while(!valid){ // loop while invalid value is entered
-            System.out.println("\n"+ this.menu);
-        
-            choice = keyboard.nextLine(); // get next line typed on keyboard
-            choice = choice.trim(); // trim off leading and trailing blanks
-        
-            if(choice.length()<1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue; 
-            }
-        
-            break; // end loop
-        
-        }
-        return choice; // return value entered
-    }
-
-    private boolean doAction(String choice) {
+ 
+@Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase(); //convert choice to upper case
         boolean done = false;
         // provide spell description based on choice entered

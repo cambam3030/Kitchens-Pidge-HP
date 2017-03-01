@@ -7,35 +7,21 @@ package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.control.GameControl;
 import harrypotter.HarryPotter;
-import java.util.Scanner;
+
 
 /**
  *
  * @author Cami
  */
-public class MainMenuView {
-   private String menu;
+public class MainMenuView extends View {
+   
    
    /**
     * displays the start program view
     */
 
-  public void displayMainMenuView() {
-       
-      boolean done = false; // set flag to not done
-      do{ 
-          // prompt for and get players name
-          String menuOption = this.getMenuOption();
-          if (menuOption.toUpperCase().equals ("Q")) // user wants to quit
-              return; // exit the game
-          
-          // do the requested action and sisplay the next view
-          done = this.doAction(menuOption);
-      } while (!done);
-    }
-
     public MainMenuView() {
-     this.menu = "\n"
+     super("\n"
                + "\n------------------------------------------"
                + "\n| Main Menu                              |"
                + "\n------------------------------------------"
@@ -45,33 +31,11 @@ public class MainMenuView {
                + "\nGP- Game Play Menu"
                + "\nS - Save game"
                + "\nQ - Quit"
-               + "\n------------------------------------------";
+               + "\n------------------------------------------");
     }
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get inFile for keyboard
-        String choice = ""; // value to be returned
-        boolean valid = false; // initialized not valid
-        
-        while(!valid){ // loop while invalid value is entered
-            System.out.println("\n"+ this.menu);
-        
-            choice = keyboard.nextLine(); // get next line typed on keyboard
-            choice = choice.trim(); // trim off leading and trailing blanks
-        
-            if(choice.length()<1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue; 
-            }
-        
-            break; // end loop
-        
-        }
-        return choice; // return value entered
-            
-    }
-        
-       
-    private boolean doAction(String choice) {
+
+@Override  
+    public boolean doAction(String choice) {
         
         choice = choice.toUpperCase(); //convert choice to upper case
         
@@ -119,12 +83,12 @@ public class MainMenuView {
     private void displayHelpMenuView() {
         //display the help menu
        HelpMenuView helpMenuView = new HelpMenuView();
-       helpMenuView.displayHelpMenuView();
+       helpMenuView.display();
     }
     private void displayGameMenuView() {
         //display the help menu
        GameMenuView gameMenuView = new GameMenuView();
-       gameMenuView.displayGameMenuView();
+       gameMenuView.display();
     }
     private void saveGame() {
         System.out.println("\n*** The saveGame() function was called"); 
