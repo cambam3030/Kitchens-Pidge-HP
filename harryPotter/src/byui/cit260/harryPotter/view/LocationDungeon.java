@@ -23,7 +23,7 @@ public class LocationDungeon {
         while (done == false) {
             double timeInput = this.getTimeInput();
             double weightInput = this.getWeightInput();
-            done = this.doAction(timeInput, weightInput);
+            done = this.doAction(weightInput, timeInput);
         }
     }
     
