@@ -87,6 +87,8 @@ public class MainMenuView {
                 break;
             case "T"://test for LocationPitch class -- this will not be included here and is only used as test
                 this.displayLocationPitchView();
+            case "D":// test for LocationDungeon class-- this will not be included here and is only used as test
+                this.displayLocationDungeonView();
             case "GP"://Display Game Play Menu
                 this.displayGameMenuView();
                 break;
