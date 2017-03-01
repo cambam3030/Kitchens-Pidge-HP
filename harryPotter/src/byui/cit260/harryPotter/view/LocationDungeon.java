@@ -53,7 +53,7 @@ public class LocationDungeon {
             time = keyboard.nextDouble(); // get next line typed on keyboard
             
         
-            if (time < 60 || weight > 190) { // checks for valid time
+            if (time < 60 || time > 190) { // checks for valid time
                 System.out.println("\n Invalid value: time cannot be less than 60 or more than 190"
                         + "Please enter your desired time:");
                 continue; 
@@ -78,7 +78,7 @@ public class LocationDungeon {
             weight = keyboard.nextDouble(); // get next line typed on keyboard
             
         
-            if(weight < 100 || time > 400) { // checks for valid weight
+            if(weight < 100 || weight > 400) { // checks for valid weight
                 System.out.println("\n Invalid value: weight cannot be less than 100 or more than 400"
                         + "\n Please enter the character's weight:");
                 continue; 
@@ -90,11 +90,11 @@ public class LocationDungeon {
         return weight; // return value entered
     }
         
-    private boolean doAction(double timeInput, double weightInput) {
+    private boolean doAction(double weightInput, double timeInput) {
         InventoryControl inventoryControlPolyJuice = new InventoryControl();
-        inventoryControlPolyJuice.calcPolyJuice(timeInput, weightInput);
+        inventoryControlPolyJuice.calcPolyJuice(weightInput, timeInput);
         
-        System.out.println("\n Please take " + inventoryControlPolyJuice.doseInOunces + " for best results!");
+        System.out.println("\n Please take " + inventoryControlPolyJuice.doseInOunces + " ounces for best results!");
         
         return true;
     }
