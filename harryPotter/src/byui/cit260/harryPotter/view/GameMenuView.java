@@ -79,7 +79,7 @@ public class GameMenuView {
     private boolean doAction(String choice) {
         
         choice = choice.toUpperCase(); //convert choice to upper case
-        
+     boolean done = false;    
         switch (choice){
             case "P": //Pause game
                 this.pauseGame();
@@ -96,12 +96,12 @@ public class GameMenuView {
             case "S": //save the current game
                 this.saveGame();
                 break;
-             case "H": // View Help Menu
+            case "H": // View Help Menu
                 this.helpMenu();
                 break;
-                  case "E": //Exit Game
-                this.exitGame();
-                break;   
+            case "E": //Exit Game
+                done = true;
+                return done;           
                                 
             default:   
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -110,26 +110,6 @@ public class GameMenuView {
         return false;
         
     }
-
-    private void startNewGame() {
-       // create a new game
-       GameControl.createNewGame(HarryPotter.getPlayer());
-       
-       //display the game menu
-       GameMenuView gameMenu = new GameMenuView();
-       gameMenu.displayMenu();
-    }
-
-    private void startExistingGame() {
-        System.out.println("\n*** The startExistingGame() function was called"); 
-    }
-
-    private void displayHelpMenuView() {
-        //display the help menu
-       HelpMenuView helpMenuView = new HelpMenuView();
-       helpMenuView.displayHelpMenuView();
-    }
-
     private void saveGame() {
         System.out.println("\n*** The saveGame() function was called"); 
     }
@@ -152,10 +132,6 @@ public class GameMenuView {
 
     private void helpMenu() {
         System.out.println("The helpMenu() function was called."); 
-    }
-
-    private void exitGame() {
-        System.out.println("The exitGame() function was called."); 
     }
 
     void displayMenu() {
