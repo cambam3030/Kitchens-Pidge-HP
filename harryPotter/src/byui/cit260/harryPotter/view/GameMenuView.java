@@ -5,10 +5,6 @@
  */
 package byui.cit260.harryPotter.view;
 
-import byui.cit260.harryPotter.control.GameControl;
-import harrypotter.HarryPotter;
-
-
 /**
  *
  * @author Cami
@@ -25,13 +21,14 @@ public class GameMenuView extends View{
                + "\n------------------------------------------"
                + "\n| Game Menu                              |"
                + "\n------------------------------------------"
-               + "\nP - Pause"
-               + "\nR - Resume"
-               + "\nI - Inventory"
-               + "\nC - Characters Met"
-               + "\nS - Save"
-               + "\nH -  Help Menu"
-               + "\nE -  Exit"
+               + "\n P - Pause"
+               + "\n R - Resume"
+               + "\n I - Inventory"
+               + "\n SP- Spells"
+               + "\n C - Characters Met"
+               + "\n S - Save"
+               + "\n H - Help Menu"
+               + "\n E - Exit"
                + "\n------------------------------------------");
     }
 @Override        
@@ -48,6 +45,9 @@ public class GameMenuView extends View{
                 break;
             case "I":// View Inventory
                 this.viewInventory();
+                break;
+            case "SP":
+                this.displaySpellMenuView();
                 break;
             case "C": //View Characters Met
                 this.charactersMet();
@@ -83,6 +83,11 @@ public class GameMenuView extends View{
 
     private void viewInventory() {
         System.out.println("The viewInventory() function was called."); 
+    }
+    
+    private void displaySpellMenuView() {
+        SpellsMenuView spellMenuView = new SpellsMenuView();
+        spellMenuView.display();
     }
 
     private void charactersMet() {
