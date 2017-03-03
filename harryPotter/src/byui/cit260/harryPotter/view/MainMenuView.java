@@ -61,6 +61,8 @@ public class MainMenuView extends ViewMenu {
             case "S": //save the current game
                 this.saveGame();
                 break;
+            case "Q":
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
