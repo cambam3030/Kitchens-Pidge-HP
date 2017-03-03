@@ -25,6 +25,7 @@ public class HelpMenuView extends ViewMenu{
                + "\nH - How to Play"
                + "\nM - Movement"
                + "\nW - Where am I?"
+               + "\nI - List of items"
                + "\nR - Return"
                + "\n------------------------------------------");
     }
@@ -50,6 +51,9 @@ public class HelpMenuView extends ViewMenu{
                 done = true;
                 System.out.println("\n*** Returning ***");
                 return done;
+            case "I": // list of items
+                listItems();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -70,8 +74,13 @@ public class HelpMenuView extends ViewMenu{
     }
 
     private void whereAmI() {
-         System.out.println("\n*** The whereAmI() function was called**");
+         System.out.println("\n*** The whereAmI() function was called**"); // return Player location variable
           
+    }
+    
+    private void listItems() {
+        ListItems listItems = new ListItems();
+        listItems.display();
     }
 
 
