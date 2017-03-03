@@ -9,12 +9,13 @@ package byui.cit260.harryPotter.view;
  *
  * @author Cami
  */
-public class GameMenuView extends View{
+public class GameMenuView extends ViewMenu{
 
    /**
     * displays the game menu view
     */
 
+    
 
     public GameMenuView() {
      super("\n"
@@ -31,7 +32,7 @@ public class GameMenuView extends View{
                + "\n E - Exit"
                + "\n------------------------------------------");
     }
-@Override        
+    @Override    
     public boolean doAction(String choice) {
         
         choice = choice.toUpperCase(); //convert choice to upper case

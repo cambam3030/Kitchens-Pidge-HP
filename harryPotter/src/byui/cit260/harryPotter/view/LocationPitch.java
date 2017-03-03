@@ -6,30 +6,34 @@
 package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.control.InventoryControl;
-import java.util.Scanner;
+
 
 /**
  *
  * @author chriskitchens
  */
-public class LocationPitch {
-    public String description;
-    public double speed;
-    public double distance;
+public class LocationPitch extends ViewCalc{
+
+
     
-    public void displayLocationPitchView() {
-        
-        boolean done = false; // begin false for loop
-        while (done == false) {
-            double speedInput = this.getSpeedInput();
-            double distanceInput = this.getDistanceInput();
-            done = this.doAction(distanceInput, speedInput);
-        }
+    @Override
+    public void display() {
+        boolean done = false;
+        do {
+            // prompt for and get player name
+            double speed = this.getDoubleInput("Please enter desired speed:");
+            double distance = getDoubleInput("Please enter desired distance:");
+            
+                
+            
+            // do requested action and display next view
+            done = doAction(distance, speed);
+        } while (!done); // exit view when done == true
     }
     
 
     public LocationPitch() {
-        this.description = "\n Welcome to the Quidditch Pitch! Today we're going"
+        displayMessage = "\n Welcome to the Quidditch Pitch! Today we're going"
                 + "\n to calculate the time it would take to catch the Snitch"
                 + "\n depending on the broom being used and how far away the Snitch"
                 + "\n started from you in yards and if it's traveling in the opposite"
@@ -46,56 +50,8 @@ public class LocationPitch {
                 ;
     }
     
-    private double getSpeedInput() {
-        Scanner keyboard = new Scanner(System.in); // get inFile for keyboard
         
-        boolean valid = false; // initialized not valid
-        System.out.println("\n" + this.description);
-        System.out.println("\n Please enter your desired speed:");
-        
-        while(!valid){ // loop while invalid value is entered
-
-            speed = keyboard.nextDouble(); // get next line typed on keyboard
-            
-        
-            if(speed < 60 || speed > 200) { // checks for valid speed
-                System.out.println("\n Invalid value: speed cannot be less than 60 or more than 200"
-                        + "Please enter your desired speed:");
-                continue; 
-            }
-        
-            break; // end loop
-        
-        }
-        return speed; // return value entered
-    }
-
-    private double getDistanceInput() {
-        Scanner keyboard = new Scanner(System.in); // get inFile for keyboard
-        
-        boolean valid = false; // initialized not valid
-        
-        System.out.println("\n Please enter the desired distance:");
-        
-        while(!valid){ // loop while invalid value is entered
-            
-        
-            distance = keyboard.nextDouble(); // get next line typed on keyboard
-            
-        
-            if(distance < 0 || distance > 500) { // checks for valid distance
-                System.out.println("\n Invalid value: distance cannot be 0 or more than 500"
-                        + "\n Please enter the desired distance:");
-                continue; 
-            }
-        
-            break; // end loop
-        
-        }
-        return distance; // return value entered
-    }
-        
-    private boolean doAction(double distanceInput, double speedInput) {
+    public boolean doAction(double distanceInput, double speedInput) {
         InventoryControl inventoryControlQuidditch = new InventoryControl();
         inventoryControlQuidditch.calcBroomSpeed(distanceInput, speedInput);
         

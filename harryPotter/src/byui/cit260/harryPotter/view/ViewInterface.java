@@ -11,6 +11,7 @@ package byui.cit260.harryPotter.view;
  */
 public interface ViewInterface {
     public void display();
-    public String getInput();
-    public boolean doAction(String value);
+    //public String getInput();
+    //public String getInput(String prompt);
+    //public boolean doAction(String value);
 }

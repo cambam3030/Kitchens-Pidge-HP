@@ -10,7 +10,7 @@ package byui.cit260.harryPotter.view;
  *
  * @author Cami
  */
-public class HelpMenuView extends View{
+public class HelpMenuView extends ViewMenu{
  
    
    /**

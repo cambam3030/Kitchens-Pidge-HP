@@ -15,7 +15,7 @@ import java.util.Scanner;
 * accessed from Gameplay Menu
 */
 
-public class SpellsMenuView extends View {
+public class SpellsMenuView extends ViewMenu {
 
     
     /**

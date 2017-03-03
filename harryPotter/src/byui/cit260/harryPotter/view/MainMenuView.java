@@ -13,7 +13,7 @@ import harrypotter.HarryPotter;
  *
  * @author Cami
  */
-public class MainMenuView extends View {
+public class MainMenuView extends ViewMenu {
    
    
    /**
@@ -51,8 +51,10 @@ public class MainMenuView extends View {
                 break;
             case "T"://test for LocationPitch class -- this will not be included here and is only used as test
                 this.displayLocationPitchView();
+                break;
             case "D":// test for LocationDungeon class-- this will not be included here and is only used as test
                 this.displayLocationDungeonView();
+                break;
             case "GP"://Display Game Play Menu
                 this.displayGameMenuView();
                 break;
@@ -96,7 +98,7 @@ public class MainMenuView extends View {
 
     private void displayLocationPitchView() {
          LocationPitch locationPitch = new LocationPitch();
-         locationPitch.displayLocationPitchView();
+         locationPitch.display();
     }
     
     private void displayLocationDungeonView() {
