@@ -13,6 +13,7 @@ public class InventoryControl {
     
     public double qTime;
     public double doseInOunces;
+    public double dollars;
     
        public double calcPolyJuice(double weight, double time){
         // Calculate the amount of Polyjuice potion the user will need to complete a task.
@@ -62,7 +63,7 @@ public class InventoryControl {
 		return -1;
         }
 
-	double dollars = (galleons / 2) + ((sickles / 2) * .25);
+	dollars = (galleons / 2) + ((sickles / 2) * .25);
 
 	return dollars;
     

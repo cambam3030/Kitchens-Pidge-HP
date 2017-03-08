@@ -29,6 +29,9 @@ public class MainMenuView extends ViewMenu {
                + "\nG - Get and start saved game"
                + "\nH - Get help on how to play the game"
                + "\nGP- Game Play Menu"
+               + "\nT-  Quitich Pitch"
+               + "\nD-  Dungeons"
+               + "\nB-  Gringotts Bank"
                + "\nS - Save game"
                + "\nQ - Quit"
                + "\n------------------------------------------");
@@ -54,6 +57,9 @@ public class MainMenuView extends ViewMenu {
                 break;
             case "D":// test for LocationDungeon class-- this will not be included here and is only used as test
                 this.displayLocationDungeonView();
+                break;
+            case "B"://test for LocationGringotts class -- this will not be included here and is only used as test
+                this.displayLocationGringottsView();
                 break;
             case "GP"://Display Game Play Menu
                 this.displayGameMenuView();
@@ -108,9 +114,15 @@ public class MainMenuView extends ViewMenu {
          locationDungeon.displayLocationDungeonView();
     }
 
+    private void displayLocationGringottsView() {
+        LocationGringotts locationGringotts = new LocationGringotts();
+        locationGringotts.display();
+    }
+
+
+    }
+
    
     
- 
-    }
     
 
