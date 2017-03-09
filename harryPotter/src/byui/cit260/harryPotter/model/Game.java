@@ -6,6 +6,7 @@
 package byui.cit260.harryPotter.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 /**
  *
  * @author chriskitchens
@@ -14,6 +15,12 @@ public class Game implements Serializable{
     //class instance variables
     private double totalTime;
     private double noPeople;
+    private Player player;
+    private Inventory[]inventory; 
+    private Character character; 
+    private Map map;
+
+
 
     public Game() {
     }
@@ -33,7 +40,38 @@ public class Game implements Serializable{
     public void setNoPeople(double noPeople) {
         this.noPeople = noPeople;
     }
+    public Player getPlayer(){
+        return player;
+    }
+    public void setPlayer(Player player){
+        this.player = player;
+    }
+    
+        public Inventory[] getInventory() {
+        return inventory;
+    }
 
+    public void setInventory(Inventory[] inventory) {
+        this.inventory = inventory;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;

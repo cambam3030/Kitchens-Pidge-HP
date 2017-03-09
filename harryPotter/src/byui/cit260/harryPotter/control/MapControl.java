@@ -5,10 +5,19 @@
  */
 package byui.cit260.harryPotter.control;
 
+import byui.cit260.harryPotter.model.Map;
+
 /**
  *
  * @author Cami
  */
 public class MapControl {
+    public static Map createMap(){
+        //create the map 
+        Map map = null;
+        System.out.println("\n*** createMap() called ***");
+        
+        return map;
+    }
     
 }
