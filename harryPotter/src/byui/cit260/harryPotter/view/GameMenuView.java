@@ -6,6 +6,7 @@
 package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.model.Game;
+import byui.cit260.harryPotter.model.HousePoints;
 import byui.cit260.harryPotter.model.Inventory;
 import byui.cit260.harryPotter.model.Location;
 import byui.cit260.harryPotter.model.Map;
@@ -33,6 +34,7 @@ public class GameMenuView extends ViewMenu{
                + "\n I - Inventory"
                + "\n SP- Spells"
                + "\n C - Characters Met"
+               + "\n HP- View House Points"
                + "\n M - Map"
                + "\n S - Save"
                + "\n H - Help Menu"
@@ -59,6 +61,9 @@ public class GameMenuView extends ViewMenu{
                 break;
             case "C": //View Characters Met
                 this.charactersMet();
+                break;
+            case "HP":
+                this.housePoints();
                 break;
             case "M": //View Map
                 this.displayMap();
@@ -124,7 +129,12 @@ public class GameMenuView extends ViewMenu{
     private void charactersMet() {
         System.out.println("The charcatersMet() function was called."); 
     }
-
+    
+    private void housePoints() {
+        HousePoints housePoints = new HousePoints();
+        housePoints.submitHousePoints();
+    }
+    
     private void helpMenu() {
         System.out.println("The helpMenu() function was called."); 
     }
@@ -176,7 +186,7 @@ END*/
         
     }
 
-   
-    
- 
+
+
+        
     }
