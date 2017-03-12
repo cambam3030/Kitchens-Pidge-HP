@@ -21,7 +21,32 @@ public class Inventory implements Serializable{
 
     public Inventory() {
     }
-
+    public Inventory(String name, double amountNeeded, double stockAvailable){
+         createInventory();
+         }
+     public static Inventory[]  createInventory(){
+             //create public static new list of inventory items
+             
+             Inventory[] inventory = new Inventory [15];
+             inventory[0] = new Inventory("wand", 1, 0);
+             inventory[1] = new Inventory("invisibility cloak", 1, 0);
+             inventory[2] = new Inventory("time turner", 1, 0);
+             inventory[3] = new Inventory("owl", 1, 0);
+             inventory[4] = new Inventory("poly juice potion", 1, 0);
+             inventory[5] = new Inventory("felix felicis", 1, 0);
+             inventory[6] = new Inventory("mandrake root", 1, 0);
+             inventory[7] = new Inventory("bezoar", 1, 0);
+             inventory[8] = new Inventory("dittany", 1, 0);
+             inventory[9] = new Inventory("dragons blood", 1, 0);
+             inventory[10] = new Inventory("broomstick", 1, 0);
+             inventory[11] = new Inventory("potions book", 1, 0);
+             inventory[12] = new Inventory("cauldron", 1, 0);
+             inventory[13] = new Inventory("library pass", 1, 0);
+             inventory[14] = new Inventory("snitch", 1, 0);
+             
+             return inventory;                     
+         }       
+    
     public double getAmountNeeded() {
         return amountNeeded;
     }

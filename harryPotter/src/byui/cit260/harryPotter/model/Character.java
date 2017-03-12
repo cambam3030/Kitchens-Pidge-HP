@@ -21,6 +21,16 @@ public class Character implements Serializable {
 
     public Character() {
     }
+    
+    public Character (String name, String description, String coordinates){
+     Character[] character = new Character[5];
+     
+     character[0] = new Character("Harry", "The boy who lived", "1,2");
+     character[1] = new Character ("Hermione", "Muggle born", "1,3" );
+     character[2] =  new Character ("Ron", "Harry's friend", "1,4");
+     character[3] = new Character("Neville", "Longbottom", "1,5");
+     character[4] = new Character ("Player Defined", "Player defined", "1,2");
+    }
 
     public String getName() {
         return name;

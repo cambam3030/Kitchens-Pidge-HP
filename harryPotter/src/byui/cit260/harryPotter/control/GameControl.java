@@ -5,7 +5,13 @@
  */
 package byui.cit260.harryPotter.control;
 
+import byui.cit260.harryPotter.model.Game;
+import byui.cit260.harryPotter.model.Inventory;
+import byui.cit260.harryPotter.model.Location;
+import byui.cit260.harryPotter.model.Map;
 import byui.cit260.harryPotter.model.Player;
+import byui.cit260.harryPotter.model.Scene;
+import byui.cit260.harryPotter.model.Scene.SceneType;
 import harrypotter.HarryPotter;
 
 /**
@@ -29,7 +35,60 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+        
+        Game game = new Game(); //create new game
+        HarryPotter.setCurrentGame(game); //save in HarryPotter
+        
+        game.setPlayer(player); // save player in game
+        
+        // create the inventory list and save in the game
+        Inventory[] inventoryList = GameControl.createInventoryList();
+        game.setInventory(inventoryList);
+        
+        Character[] character = GameControl.createCharacter();
+        game.setCharacter(character);
+        
+        Map map = MapControl.createMap(); //create and initialize new map
+        game.setMap(map); //save map in game
+        
+        //move characters to starting postion in the map
+        MapControl.moveCharacterToStartingLocation(map);
+        
     }
+
+
+    private static Inventory[] createInventoryList() {
+        Inventory inventory = new Inventory(String name, double amountNeeded, double stockAvailable);
+        return null;
+    }
+
+    static void assignScenesToLocations(Map map, Scene[] scenes) {
+        Location[][] locations = map.getLocations();
+        
+        //start point
+        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.diagonAlley.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.gringotts.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.leakyCauldron.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.ollivanders.ordinal()]);
+        locations[0][5].setScene(scenes[SceneType.flourishAndBlotts.ordinal()]);
+        locations[0][6].setScene(scenes[SceneType.knockturnAlley.ordinal()]);
+        locations[0][7].setScene(scenes[SceneType.hogwartsExpress.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.hogwarts.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.greatHall.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.dormitory.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.potions.ordinal()]);
+        locations[1][5].setScene(scenes[SceneType.charms.ordinal()]);
+        locations[1][6].setScene(scenes[SceneType.quidditch.ordinal()]);
+        locations[1][7].setScene(scenes[SceneType.library.ordinal()]);
+        locations[1][8].setScene(scenes[SceneType.transfiguration.ordinal()]);
+        locations[1][9].setScene(scenes[SceneType.hagridsHut.ordinal()]);
+        locations[1][10].setScene(scenes[SceneType.forbiddenForest.ordinal()]);
+        locations[1][11].setScene(scenes[SceneType.roomOfRequirements.ordinal()]);
+        locations[1][12].setScene(scenes[SceneType.headMastersOffice.ordinal()]);
+        
+        
+    }
+
     
 }

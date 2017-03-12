@@ -16,38 +16,54 @@ public class Location implements Serializable{
     
     
     //clas instance variables
-    private String row;
-    private String column;
-    private String visited;
+    private int row;
+    private int column;
+    private boolean visited;
     private double amountRemaining;
+    private Scene scene;
+    private Character[] character;
 
     public Location() {
     }
-    
-    
 
-    public String getRow() {
+    public int getRow() {
         return row;
     }
 
-    public void setRow(String row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
-    public String getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    public void setColumn(String column) {
+    public void setColumn(int column) {
         this.column = column;
     }
 
-    public String getVisited() {
+    public boolean isVisited() {
         return visited;
     }
 
-    public void setVisited(String visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Character[] getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character[] character) {
+        this.character = character;
     }
 
     public double getAmountRemaining() {

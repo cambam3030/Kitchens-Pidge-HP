@@ -5,6 +5,12 @@
  */
 package byui.cit260.harryPotter.view;
 
+import byui.cit260.harryPotter.model.Game;
+import byui.cit260.harryPotter.model.Inventory;
+import byui.cit260.harryPotter.model.Location;
+import byui.cit260.harryPotter.model.Map;
+import harrypotter.HarryPotter;
+
 /**
  *
  * @author Cami
@@ -27,6 +33,7 @@ public class GameMenuView extends ViewMenu{
                + "\n I - Inventory"
                + "\n SP- Spells"
                + "\n C - Characters Met"
+               + "\n M - Map"
                + "\n S - Save"
                + "\n H - Help Menu"
                + "\n E - Exit"
@@ -52,6 +59,9 @@ public class GameMenuView extends ViewMenu{
                 break;
             case "C": //View Characters Met
                 this.charactersMet();
+                break;
+            case "M": //View Map
+                this.displayMap();
                 break;
             case "S": //save the current game
                 this.saveGame();
@@ -83,7 +93,27 @@ public class GameMenuView extends ViewMenu{
     }
 
     private void viewInventory() {
-        System.out.println("The viewInventory() function was called."); 
+        StringBuilder line;
+        Game game = HarryPotter.getCurrentGame();
+        Inventory[] inventory = game.getInventory();
+        
+        System.out.println("\n  LIST OF INVENTORY ITEMS");
+        line = new StringBuilder("                                    ");
+        line.insert(0, "DESCRIPTION");
+        line.insert(20, "REQUIRED");
+        line.insert(30, "IN STOCK");
+        System.out.println(line.toString());
+        
+        //for each inventory item 
+        for (Inventory item : inventory){
+            line = new StringBuilder("                                       ");
+            line.insert(0,item.getName());
+            line.insert(23,item.getAmountNeeded());
+            line.insert(33, item.getStockAvailable());
+            
+            //DISPAY the line
+            System.out.println(line.toString());
+        }
     }
     
     private void displaySpellMenuView() {
@@ -101,6 +131,49 @@ public class GameMenuView extends ViewMenu{
 
     void displayMenu() {
         System.out.println("The displayMenu() function was called."); 
+    }
+
+    private void displayMap() {
+        StringBuilder line;
+        Game game = HarryPotter.getCurrentGame();
+        Map map = game.getMap();
+        
+        System.out.println("\n     MAP     ");
+        line = new StringBuilder("                                      ");
+        line.insert(0, "DESCRIPTION");
+        line.insert(20,"ROW");
+        line.insert(30, "COLUMN");
+        
+        System.out.println(line.toString());
+        //For every row
+        
+        for(Location rowCount: scene){
+            line = new StringBuilder("                                  ");
+            line.insert(0, scence.getDescription);
+            
+            location = locations[row][column];
+            
+            
+        } 
+         
+        
+        
+
+/*PRINT a row divider
+ PRINT the row number on a new line
+ FOR every column in row
+ PRINT a column divider
+ location = locations[row][column]
+ IF location has been visited
+ PRINT the mapSymbol in the scene in this location
+ ELSE
+ DISPLAY " ?? "
+ ENDIF
+ PRINT the ending column divider
+ ENDFOR
+ PRINT ending row divider
+END*/
+        
     }
 
    
