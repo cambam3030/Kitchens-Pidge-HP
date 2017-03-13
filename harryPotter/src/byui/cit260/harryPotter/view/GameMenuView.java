@@ -5,6 +5,7 @@
  */
 package byui.cit260.harryPotter.view;
 
+import byui.cit260.harryPotter.control.GameControl;
 import byui.cit260.harryPotter.model.Game;
 import byui.cit260.harryPotter.model.HousePoints;
 import byui.cit260.harryPotter.model.Inventory;
@@ -131,8 +132,7 @@ public class GameMenuView extends ViewMenu{
     }
     
     private void housePoints() {
-        HousePoints housePoints = new HousePoints();
-        housePoints.submitHousePoints();
+        GameControl.submitHousePoints();
     }
     
     private void helpMenu() {
