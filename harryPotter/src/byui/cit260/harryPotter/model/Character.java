@@ -14,6 +14,9 @@ import java.util.Objects;
  */
 public class Character implements Serializable {
     
+    // remove String for coordinates - make two values, coordinate row, coordinate column
+    // create Character selection View - set Character to Game
+    
     //class instance variables
     private String name;
     private String description;

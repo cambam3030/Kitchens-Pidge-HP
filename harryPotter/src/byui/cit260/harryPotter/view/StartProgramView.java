@@ -26,7 +26,29 @@ public class StartProgramView {
     private void displayBanner() {
         
         System.out.println(
-                "\n********************************************************"
+                "\n				     //\\\\\n" +
+"				    //  \\\\\n" +
+"			     / \\   //    \\\\\n" +
+"     Harry Potter Text       | |  //      \\\\\n" +
+"	Adventure	      \\ \\//        \\\\\n" +
+"			       `//          \\\\\n" +
+"			       //____________\\\\\n" +
+"			      /||  _  _  _   ||\\\n" +
+"		       	       || |_||_||_|  ||\n" +
+"        		       ||      	     ||\n" +
+"               /\\              ||            ||\n" +
+"               ||         /\\   ||	     ||\n" +
+"              /  \\       /--\\  ||____________||\n" +
+"             /____\\      |--|__||	     ||\n" +
+"             |    |   __/|  |  ||	     ||\n" +
+"             |    |__/   |  |  ||	     ||\n" +
+" /\\      ___/|    |      |  |  ||	     ||\n" +
+"/--\\ ___/    |    |      |  |  ||	     ||\n" +
+"|--|/        |    |      |  |  ||	     ||\\___\n" +
+"|  |         |    |            ||	     ||    \\_____\n" +
+"|  |         |    |\n" +
+"|  |    \n"
+              + "\n********************************************************"
               + "\n* This text-based game takes players throughout        *"
               + "\n* the world of Harry Potter. Users will discover       *"
               + "\n* they’re a wizard/witch, obtain school supplies       *"
@@ -46,7 +68,8 @@ public class StartProgramView {
               + "\n* where skills and spells are obtained. All classes    *"
               + "\n* must be complete before the user takes their         *"
               + "\n* O.W.L.s and are allowed to advance to the final duel.*"
-              + "\n********************************************************");
+              + "\n********************************************************"
+              );
     }
 
     public void displayStartProgramView() {
