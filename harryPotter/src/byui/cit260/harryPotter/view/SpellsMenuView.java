@@ -5,6 +5,9 @@
  */
 package byui.cit260.harryPotter.view;
 
+import byui.cit260.harryPotter.model.Spells;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 /**
  *
@@ -94,8 +97,20 @@ public class SpellsMenuView extends ViewMenu {
         return done;
     }
 
+private List<Spells> acquireSpells = new ArrayList<>();
+    
+    public List<Spells> getAquiredSpells(){
+        List<Spells> acquiredSpells = null;
+            return acquiredSpells;
+    }
 
+Spells earnedSpell = doSomeActionThatEarnsSpell();
+//Have not decided how they will aquire spells yet. Maybe by attending class? 
+spellsMenuView.getSpellsMenuView().getAquiredSpells().add(earnedSpell);
 
-
+    private Spells doSomeActionThatEarnsSpell() {
+        System.out.println(" Attend Class to earn Spells");
+        return null;
+    }
     
 }

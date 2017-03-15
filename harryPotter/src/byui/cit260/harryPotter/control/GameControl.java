@@ -62,7 +62,7 @@ public class GameControl {
         Inventory inventory = new Inventory(String name, double amountNeeded, double stockAvailable);
         return null;
     }
-
+    
     
     public static void submitHousePoints(){
         int housePoints[] = {500, 600, 700, 800};

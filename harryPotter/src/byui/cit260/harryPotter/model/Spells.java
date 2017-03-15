@@ -11,46 +11,35 @@ import java.util.Objects;
  *
  * @author chriskitchens
  */
-public class Spells extends Inventory implements Serializable {
+public enum Spells implements Serializable{
     //class instance variables
-    private String effect;
+    
+                Alohamora("Unlock"),
+                WingardiumLeviosa("Levitate"),
+                Expelliarmus("Disarm"),
+                Obliviate("WipeMemory"),
+                Lumos("Illuminate"),
+                Knox("Darken"),
+                PetrificusTotalis("BodyBind"),
+                Reparo("Repair"),
+                Protego("Sheild");
 
-    public Spells() {
-    }
 
-    public String getEffect() {
+   
+   private String effect;
+   
+    
+    Spells(String effect){
+
+     this.effect = effect;
+}
+   public String getEffect(){
         return effect;
     }
 
-    public void setEffect(String effect) {
-        this.effect = effect;
-    }
+    
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.effect);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Spells other = (Spells) obj;
-        if (!Objects.equals(this.effect, other.effect)) {
-            return false;
-        }
-        return true;
-    }
-
+    
     @Override
     public String toString() {
         return "Spells{" + "effect=" + effect + '}';

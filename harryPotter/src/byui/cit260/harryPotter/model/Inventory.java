@@ -6,6 +6,8 @@
 package byui.cit260.harryPotter.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -108,6 +110,7 @@ public class Inventory implements Serializable{
     public String toString() {
         return "Inventory{" + "amountNeeded=" + amountNeeded + ", stockAvailable=" + stockAvailable + ", name=" + name + '}';
     }
+    
     
     
 }
