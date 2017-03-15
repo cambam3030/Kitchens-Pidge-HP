@@ -157,12 +157,15 @@ public class GameMenuView extends ViewMenu{
         System.out.println(line.toString());
         //For every row
         
-        for(Location rowCount: scene){
-            line = new StringBuilder("                                  ");
-            line.insert(0, scence.getDescription);
-            
-            location = locations[row][column];
-            
+        Location[][] locations = map.getLocations();
+        
+        for(int row = 0; row < locations.length; row++){
+            for(int column = 0; column < locations[row].length; column++){
+                Location location = locations[row][column];
+                System.out.print(location.getScene().getMapSymbol());
+                System.out.print(" ");
+            }
+            System.out.println();
             
         } 
          

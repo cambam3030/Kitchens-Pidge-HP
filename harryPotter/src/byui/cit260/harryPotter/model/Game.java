@@ -6,7 +6,6 @@
 package byui.cit260.harryPotter.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 /**
  *
  * @author chriskitchens
@@ -18,7 +17,7 @@ public class Game implements Serializable{
     private Player player;
     private Inventory[] inventory;
     private Map map;
-    private Character[] character;
+    private Character character;
 
     public Game() {
     }
@@ -38,7 +37,39 @@ public class Game implements Serializable{
     public void setNoPeople(double noPeople) {
         this.noPeople = noPeople;
     }
+    
+    public Player getPlayer() {
+        return player;
+    }
 
+    public Inventory[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory[] inventory) {
+        this.inventory = inventory;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+ 
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -73,39 +104,7 @@ public class Game implements Serializable{
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
     }
 
-    public Player getPlayer() {
-        return player;
-    }
 
-
-    public Inventory[] getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(Inventory[] inventory) {
-        this.inventory = inventory;
-    }
-
-    public Map getMap() {
-        return map;
-    }
-
-    public void setMap(Map map) {
-        this.map = map;
-    }
-
-    public Character[] getCharacter() {
-        return character;
-    }
-
-    public void setCharacter(Character[] character) {
-        this.character = character;
-    }
-
- 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
     
     
 }
