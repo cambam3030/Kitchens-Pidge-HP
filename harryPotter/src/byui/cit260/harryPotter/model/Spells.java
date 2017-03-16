@@ -7,43 +7,35 @@ package byui.cit260.harryPotter.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author chriskitchens
  */
-public enum Spells implements Serializable{
+public enum Spells implements Serializable {
     //class instance variables
-    
-                Alohamora("Unlock"),
-                WingardiumLeviosa("Levitate"),
-                Expelliarmus("Disarm"),
-                Obliviate("WipeMemory"),
-                Lumos("Illuminate"),
-                Knox("Darken"),
-                PetrificusTotalis("BodyBind"),
-                Reparo("Repair"),
-                Protego("Sheild");
 
+    Alohamora("Unlock"),
+    WingardiumLeviosa("Levitate"),
+    Expelliarmus("Disarm"),
+    Obliviate("WipeMemory"),
+    Lumos("Illuminate"),
+    Knox("Darken"),
+    PetrificusTotalis("BodyBind"),
+    Reparo("Repair"),
+    Protego("Sheild");
 
-   
-   private String effect;
-   
-    
-    Spells(String effect){
+    private String effect;
 
-     this.effect = effect;
-}
-   public String getEffect(){
+    Spells(String effect) {
+
+        this.effect = effect;
+    }
+
+    public String getEffect() {
         return effect;
     }
 
-    
-
-    
-    @Override
-    public String toString() {
-        return "Spells{" + "effect=" + effect + '}';
-    }
     
     
 }

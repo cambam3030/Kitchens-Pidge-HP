@@ -89,8 +89,5 @@ public class GameControl {
         System.out.println("\n Minimum and Maximum House Points: " + min + " and " + max);
     }
     
-    
 
-
-    
 }
