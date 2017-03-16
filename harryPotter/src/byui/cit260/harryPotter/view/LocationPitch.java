@@ -6,6 +6,7 @@
 package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.control.InventoryControl;
+import byui.cit260.harryPotter.exceptions.InventoryControlException;
 
 
 /**
@@ -27,7 +28,16 @@ public class LocationPitch extends ViewCalc{
                 
             
             // do requested action and display next view
-            done = doAction(distance, speed);
+            try {
+                done = doAction(distance, speed);
+            } catch (InventoryControlException ice) {
+                System.out.println(ice.getMessage());
+                return;
+            } catch (Throwable te) {
+                System.out.println(te.getMessage());
+                te.printStackTrace();
+                return;
+            }
         } while (!done); // exit view when done == true
     }
     
@@ -51,7 +61,8 @@ public class LocationPitch extends ViewCalc{
     }
     
         
-    public boolean doAction(double distanceInput, double speedInput) {
+    public boolean doAction(double distanceInput, double speedInput) 
+            throws InventoryControlException {
         InventoryControl inventoryControlQuidditch = new InventoryControl();
         inventoryControlQuidditch.calcBroomSpeed(distanceInput, speedInput);
         

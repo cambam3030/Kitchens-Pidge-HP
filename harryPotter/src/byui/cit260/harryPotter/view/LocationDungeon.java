@@ -6,6 +6,7 @@
 package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.control.InventoryControl;
+import byui.cit260.harryPotter.exceptions.InventoryControlException;
 import java.util.Scanner;
 
 /**
@@ -16,14 +17,25 @@ public class LocationDungeon {
     public String description;
     public double time;
     public double weight;
+    public String thisAssignmentIsStupid;
     
-    public void displayLocationDungeonView() {
+    public void displayLocationDungeonView() 
+            throws InventoryControlException {
         
         boolean done = false; // begin false for loop
-        while (done == false) {
+        
+        try{
+            while (done == false) {
             double timeInput = this.getTimeInput();
             double weightInput = this.getWeightInput();
-            done = this.doAction(weightInput, timeInput);
+            done = this.doAction(weightInput, timeInput);}
+        } catch (InventoryControlException ive) {
+            System.out.println(ive.getMessage());
+            return;
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            return;
         }
     }
     
@@ -49,16 +61,8 @@ public class LocationDungeon {
         System.out.println("\n Please enter the time requried:");
         
         while(!valid){ // loop while invalid value is entered
-
-            time = keyboard.nextDouble(); // get next line typed on keyboard
             
-        
-            if (time < 60 || time > 190) { // checks for valid time
-                System.out.println("\n Invalid value: time cannot be less than 60 or more than 190"
-                        + "Please enter your desired time:");
-                continue; 
-            }
-        
+            time = keyboard.nextDouble(); // get next line typed on keyboard
             break; // end loop
         
         }
@@ -75,22 +79,23 @@ public class LocationDungeon {
         while(!valid){ // loop while invalid value is entered
             
         
-            weight = keyboard.nextDouble(); // get next line typed on keyboard
+            thisAssignmentIsStupid = keyboard.nextLine(); // get next line typed on keyboard
             
-        
-            if(weight < 100 || weight > 400) { // checks for valid weight
-                System.out.println("\n Invalid value: weight cannot be less than 100 or more than 400"
-                        + "\n Please enter the character's weight:");
-                continue; 
+            try {
+                weight = Double.parseDouble(thisAssignmentIsStupid);
+            } catch (NumberFormatException nf) {
+                System.out.println("\n You must enter a valid number");
             }
-        
+            
+            
             break; // end loop
         
         }
         return weight; // return value entered
     }
         
-    private boolean doAction(double weightInput, double timeInput) {
+    private boolean doAction(double weightInput, double timeInput) 
+            throws InventoryControlException {
         InventoryControl inventoryControlPolyJuice = new InventoryControl();
         inventoryControlPolyJuice.calcPolyJuice(weightInput, timeInput);
         

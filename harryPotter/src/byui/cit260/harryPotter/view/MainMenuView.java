@@ -6,6 +6,7 @@
 package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.control.GameControl;
+import byui.cit260.harryPotter.exceptions.InventoryControlException;
 import harrypotter.HarryPotter;
 
 
@@ -56,7 +57,14 @@ public class MainMenuView extends ViewMenu {
                 this.displayLocationPitchView();
                 break;
             case "D":// test for LocationDungeon class-- this will not be included here and is only used as test
-                this.displayLocationDungeonView();
+                try{
+                    this.displayLocationDungeonView();
+                } catch (InventoryControlException ive) {
+                    System.out.println(ive.getMessage());
+                } catch (Throwable te){
+                    System.out.println(te.getMessage());
+                    te.printStackTrace();
+                }
                 break;
             case "B"://test for LocationGringotts class -- this will not be included here and is only used as test
                 this.displayLocationGringottsView();
@@ -109,7 +117,8 @@ public class MainMenuView extends ViewMenu {
          locationPitch.display();
     }
     
-    private void displayLocationDungeonView() {
+    private void displayLocationDungeonView() 
+            throws InventoryControlException {
          LocationDungeon locationDungeon = new LocationDungeon();
          locationDungeon.displayLocationDungeonView();
     }

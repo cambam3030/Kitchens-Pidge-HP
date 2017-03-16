@@ -6,6 +6,7 @@
 package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.control.InventoryControl;
+import byui.cit260.harryPotter.exceptions.InventoryControlException;
 
 /**
  *
@@ -25,7 +26,16 @@ public class LocationGringotts extends ViewCalc{
                 
             
             // do requested action and display next view
-            done = doAction(galleons, sickles);
+            try {
+                done = doAction(galleons, sickles);
+            } catch (InventoryControlException ive) {
+                System.out.println(ive.getMessage());
+                return;
+            } catch (Throwable te) {
+                System.out.println(te.getMessage());
+                te.printStackTrace();
+                return;
+            }
         } while (!done); // exit view when done == true
     }
     
@@ -42,7 +52,8 @@ public class LocationGringotts extends ViewCalc{
     }
     
         
-    public boolean doAction(double galleonsInput, double sicklesInput) {
+    public boolean doAction(double galleonsInput, double sicklesInput) 
+            throws InventoryControlException {
         InventoryControl inventoryControlMoney = new InventoryControl();
         inventoryControlMoney.moneyExchange(galleonsInput, sicklesInput);
         

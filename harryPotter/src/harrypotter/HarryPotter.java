@@ -33,7 +33,14 @@ public class HarryPotter {
     public static void main(String[] args) {
        // create StartProgramViewOrg and display start program view
        StartProgramView startProgramView = new StartProgramView();
-       startProgramView.displayStartProgramView();
+       
+       try {
+           startProgramView.displayStartProgramView();       
+       } catch (Throwable te) {
+           System.out.println(te.getMessage());
+           te.printStackTrace();
+           startProgramView.displayStartProgramView();
+       }
     }
 
     public static Game getCurrentGame() {
