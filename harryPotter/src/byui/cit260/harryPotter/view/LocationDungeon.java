@@ -18,25 +18,28 @@ public class LocationDungeon {
     public double time;
     public double weight;
     public String thisAssignmentIsStupid;
+    public String timeInput;
     
     public void displayLocationDungeonView() 
             throws InventoryControlException {
         
         boolean done = false; // begin false for loop
         
-        try{
-            while (done == false) {
+        while (done == false){
+            
             double timeInput = this.getTimeInput();
             double weightInput = this.getWeightInput();
-            done = this.doAction(weightInput, timeInput);}
-        } catch (InventoryControlException ive) {
-            System.out.println(ive.getMessage());
-            return;
-        } catch (Throwable te) {
-            System.out.println(te.getMessage());
-            te.printStackTrace();
-            return;
+            try {
+                done = this.doAction(weightInput, timeInput);
+            } catch (InventoryControlException ive) {
+                System.out.println(ive.getMessage());
+                
+            } catch (Throwable te) {
+                System.out.println(te.getMessage());
+                te.printStackTrace();
+                //return;
         }
+    }
     }
     
 
@@ -62,8 +65,14 @@ public class LocationDungeon {
         
         while(!valid){ // loop while invalid value is entered
             
-            time = keyboard.nextDouble(); // get next line typed on keyboard
-            break; // end loop
+            timeInput = keyboard.next(); // get next line typed on keyboard            
+            try {
+                time = Double.parseDouble(timeInput);
+                
+            } catch(NumberFormatException nf){
+                    System.out.println("Please enter a valid number.");                    
+            }
+            break;// end loop
         
         }
         return time; // return value entered
