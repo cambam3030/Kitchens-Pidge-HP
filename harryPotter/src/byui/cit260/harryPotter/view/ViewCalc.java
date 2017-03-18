@@ -28,12 +28,33 @@ public abstract class ViewCalc extends View {
   
     
     public double getDoubleInput(String prompt) {
-        String doubleValue = getInput(prompt);
-        return Double.parseDouble(doubleValue);
+        double realDoubleValue = 0;
+        boolean done = false;
+        
+        while (!done) {
+            String doubleValue = getInput(prompt);
+            
+                
+            try {
+                realDoubleValue = Double.parseDouble(doubleValue);
+                return realDoubleValue;
+            } catch(NumberFormatException nf){
+                System.out.println("Please enter a valid number.");
+               
+            }
+            if (!done) {
+                continue;
+            } else {
+            }
+            done = true;
+        }
+         
+        
+        return realDoubleValue;
     }
     
     public int getIntInput(String prompt) {
         String intValue = getInput(prompt);
         return Integer.parseInt(intValue);
-    }
+    }   
 }

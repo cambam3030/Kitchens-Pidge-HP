@@ -49,7 +49,7 @@ public class InventoryControl {
         }
         // check distance; needs to be at least 0 and not greater than 500
 	if (distance < 0 || distance > 500) {
-		throw new InventoryControlException("Distance must be between 0 and 500.");
+		throw new InventoryControlException("Distance must be between 0 and 500.");                
         }
 	qTime = distance / ((broomSpeed - SNITCH) / 3);
 

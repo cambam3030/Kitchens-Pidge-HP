@@ -17,7 +17,7 @@ public class LocationDungeon {
     public String description;
     public double time;
     public double weight;
-    public String thisAssignmentIsStupid;
+    public String weightInput;
     public String timeInput;
     
     public void displayLocationDungeonView() 
@@ -65,12 +65,16 @@ public class LocationDungeon {
         
         while(!valid){ // loop while invalid value is entered
             
-            timeInput = keyboard.next(); // get next line typed on keyboard            
+            timeInput = keyboard.nextLine(); // get next line typed on keyboard            
             try {
                 time = Double.parseDouble(timeInput);
-                
+                return time;
             } catch(NumberFormatException nf){
                     System.out.println("Please enter a valid number.");                    
+            }
+            if (!valid) {
+                continue;
+            } else {             
             }
             break;// end loop
         
@@ -88,14 +92,19 @@ public class LocationDungeon {
         while(!valid){ // loop while invalid value is entered
             
         
-            thisAssignmentIsStupid = keyboard.nextLine(); // get next line typed on keyboard
+            weightInput = keyboard.nextLine(); // get next line typed on keyboard
             
             try {
-                weight = Double.parseDouble(thisAssignmentIsStupid);
+                weight = Double.parseDouble(weightInput);
+                return weight;
             } catch (NumberFormatException nf) {
                 System.out.println("\n You must enter a valid number");
             }
             
+            if(!valid) {
+                continue;
+            } else {
+            }
             
             break; // end loop
         

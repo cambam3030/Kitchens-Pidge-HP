@@ -23,12 +23,21 @@ public class LocationPitch extends ViewCalc{
         do {
             // prompt for and get player name
             double speed = this.getDoubleInput("Please enter desired speed:");
+            if (speed < 60) {
+                System.out.println("Speed must be between 60 and 200.");
+                continue;
+            }
+            
             double distance = getDoubleInput("Please enter desired distance:");
+            if (distance < 0 || distance > 500) {
+                System.out.println("Distance must be between 0 and 500.");
+                continue;
+                }
             
-                
+   
             
-            // do requested action and display next view
-            try {
+           
+            try {               
                 done = doAction(distance, speed);
             } catch (InventoryControlException ice) {
                 System.out.println(ice.getMessage());
@@ -65,7 +74,7 @@ public class LocationPitch extends ViewCalc{
             throws InventoryControlException {
         InventoryControl inventoryControlQuidditch = new InventoryControl();
         inventoryControlQuidditch.calcBroomSpeed(distanceInput, speedInput);
-        
+               
         System.out.println("\n It would take you " + inventoryControlQuidditch.qTime + " seconds to catch the Snitch!");
         
         return true;
