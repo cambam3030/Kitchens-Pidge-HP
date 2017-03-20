@@ -16,10 +16,10 @@ public class LocationGringotts extends ViewCalc{
     
     @Override
     public void display() {
-        System.out.println(displayMessage);
+       //* System.out.println(displayMessage);
         boolean done = false;
         do {
-            // prompt for and get player name
+            // prompt for galleons and sickles
             double galleons = this.getDoubleInput("Please enter galleons:");
             double sickles = getDoubleInput("Please enter sickles:");
             
