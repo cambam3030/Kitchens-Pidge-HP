@@ -80,22 +80,22 @@ public class GameMenuView extends ViewMenu{
                 return done;           
                                 
             default:   
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
         
     }
     private void saveGame() {
-        System.out.println("\n*** The saveGame() function was called"); 
+        this.console.println("\n*** The saveGame() function was called"); 
     }
 
     private void pauseGame() {
-       System.out.println("The pauseGame() function was called."); 
+       this.console.println("The pauseGame() function was called."); 
     }
 
     private void resumeGame() {
-        System.out.println("The resumeGame() function was called."); 
+        this.console.println("The resumeGame() function was called."); 
     }
 
     private void viewInventory() {
@@ -103,12 +103,12 @@ public class GameMenuView extends ViewMenu{
         Game game = HarryPotter.getCurrentGame();
         Inventory[] inventory = game.getInventory();
         
-        System.out.println("\n  LIST OF INVENTORY ITEMS");
+        this.console.println("\n  LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                                    ");
         line.insert(0, "DESCRIPTION");
         line.insert(20, "REQUIRED");
         line.insert(30, "IN STOCK");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         //for each inventory item 
         for (Inventory item : inventory){
@@ -118,7 +118,7 @@ public class GameMenuView extends ViewMenu{
             line.insert(33, item.getStockAvailable());
             
             //DISPAY the line
-            System.out.println(line.toString());
+            this.console.println(line.toString());
         }
     }
     
@@ -128,7 +128,7 @@ public class GameMenuView extends ViewMenu{
     }
 
     private void charactersMet() {
-        System.out.println("The charcatersMet() function was called."); 
+        this.console.println("The charcatersMet() function was called."); 
     }
     
     private void housePoints() {
@@ -136,11 +136,11 @@ public class GameMenuView extends ViewMenu{
     }
     
     private void helpMenu() {
-        System.out.println("The helpMenu() function was called."); 
+        this.console.println("The helpMenu() function was called."); 
     }
 
     void displayMenu() {
-        System.out.println("The displayMenu() function was called."); 
+        this.console.println("The displayMenu() function was called."); 
     }
 
     private void displayMap() {
@@ -148,13 +148,13 @@ public class GameMenuView extends ViewMenu{
         Game game = HarryPotter.getCurrentGame();
         Map map = game.getMap();
         
-        System.out.println("\n     MAP     ");
+        this.console.println("\n     MAP     ");
         line = new StringBuilder("                                      ");
         line.insert(0, "DESCRIPTION");
         line.insert(20,"ROW");
         line.insert(30, "COLUMN");
         
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         //For every row
         
         Location[][] locations = map.getLocations();
@@ -162,10 +162,10 @@ public class GameMenuView extends ViewMenu{
         for(int row = 0; row < locations.length; row++){
             for(int column = 0; column < locations[row].length; column++){
                 Location location = locations[row][column];
-                System.out.print(location.getScene().getMapSymbol());
-                System.out.print(" ");
+                this.console.print(location.getScene().getMapSymbol());
+                this.console.print(" ");
             }
-            System.out.println();
+            this.console.println();
             
         } 
          

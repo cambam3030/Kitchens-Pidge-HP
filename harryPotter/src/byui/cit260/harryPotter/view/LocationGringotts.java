@@ -29,10 +29,10 @@ public class LocationGringotts extends ViewCalc{
             try {
                 done = doAction(galleons, sickles);
             } catch (InventoryControlException ive) {
-                System.out.println(ive.getMessage());
+                ErrorView.display(this.getClass().getName(),ive.getMessage());
                 return;
             } catch (Throwable te) {
-                System.out.println(te.getMessage());
+                ErrorView.display(this.getClass().getName(),te.getMessage());
                 te.printStackTrace();
                 return;
             }
@@ -57,7 +57,7 @@ public class LocationGringotts extends ViewCalc{
         InventoryControl inventoryControlMoney = new InventoryControl();
         inventoryControlMoney.moneyExchange(galleonsInput, sicklesInput);
         
-        System.out.println("\n You have $" + inventoryControlMoney.dollars + " US Dollars Left!");
+        this.console.println("\n You have $" + inventoryControlMoney.dollars + " US Dollars Left!");
         
         return true;
     }

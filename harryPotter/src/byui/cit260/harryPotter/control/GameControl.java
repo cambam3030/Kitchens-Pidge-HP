@@ -68,11 +68,11 @@ public class GameControl {
     public static void submitHousePoints(){
         int housePoints[] = {500, 600, 700, 800};
         
-        System.out.println("\n\t HOUSE POINTS");
-        System.out.println(" Hufflepuff has " + housePoints[0] + " house points!");
-        System.out.println(" Ravenclaw has " + housePoints[1] + " house points!");
-        System.out.println(" Slytherin has " + housePoints[2] + " house points!");
-        System.out.println(" Gryffindor has " + housePoints[3] + " house points!");
+        this.console.println("\n\t HOUSE POINTS");
+        this.console.println(" Hufflepuff has " + housePoints[0] + " house points!");
+        this.console.println(" Ravenclaw has " + housePoints[1] + " house points!");
+        this.console.println(" Slytherin has " + housePoints[2] + " house points!");
+        this.console.println(" Gryffindor has " + housePoints[3] + " house points!");
         
         findMinMaxPoints(housePoints);
     }
@@ -86,7 +86,7 @@ public class GameControl {
             if(housePoints[i] > max) max = housePoints[i];
         }
         
-        System.out.println("\n Minimum and Maximum House Points: " + min + " and " + max);
+        this.console.println("\n Minimum and Maximum House Points: " + min + " and " + max);
     }
     
 

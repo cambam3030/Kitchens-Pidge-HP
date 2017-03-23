@@ -5,6 +5,9 @@
  */
 package byui.cit260.harryPotter.model;
 
+import byui.cit260.harryPotter.view.ErrorView;
+import harrypotter.HarryPotter;
+import java.io.PrintWriter;
 import java.io.Serializable;
 /**
  *
@@ -16,12 +19,14 @@ public class Map implements Serializable {
     private double columnCount;
     private Location[][] locations;
     
+    
     public Map() {
     }
 
     public Map(int rowCount, int columnCount) {
         if (rowCount < 1 || columnCount < 1 ){
-            System.out.println("the number of rows and columns must be greater than zero.");
+            ErrorView.display(this.getClass().getName(),
+                    "the number of rows and columns must be greater than zero.");
             return;
         }
         this.rowCount = rowCount; 

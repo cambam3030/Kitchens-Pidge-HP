@@ -19,6 +19,12 @@ import byui.cit260.harryPotter.model.ResourceTypeScene;
 import byui.cit260.harryPotter.model.Scene;
 import byui.cit260.harryPotter.model.Spells;
 import byui.cit260.harryPotter.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -27,19 +33,55 @@ import byui.cit260.harryPotter.view.StartProgramView;
 public class HarryPotter {
     private static Game currentGame = null;
     private static Player player = null;
-        /**
+        
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    private static PrintWriter logFile = null;
+    
+    /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
        // create StartProgramViewOrg and display start program view
-       StartProgramView startProgramView = new StartProgramView();
        
        try {
-           startProgramView.displayStartProgramView();       
+           
+           //open character stream files for end user input and output
+           HarryPotter.inFile = 
+                   new BufferedReader(new InputStreamReader(System.in));
+           HarryPotter.outFile =
+                   new PrintWriter(System.out, true);
+           //open log file
+           String filePath = "log.txt";
+           HarryPotter.logFile = new PrintWriter(filePath);
+           
+           StartProgramView startProgramView = new StartProgramView();
+           startProgramView.displayStartProgramView(); 
+           return;
        } catch (Throwable te) {
-           System.out.println(te.getMessage());
-           te.printStackTrace();
-           startProgramView.displayStartProgramView();
+           System.out.println("Exception: " + te.toString()+
+                               "\nCause: " + te.getCause()+
+                               "\nMessage:" + te.getMessage());
+           
+           te.printStackTrace();;
+         
+       }
+       
+       finally{
+           try {
+              if (HarryPotter.inFile !=null)
+                      HarryPotter.inFile.close();
+              if (HarryPotter.outFile !=null)
+               HarryPotter.outFile.close();
+              
+              if (HarryPotter.logFile !=null)
+                  HarryPotter.logFile.close();
+           } catch (IOException ex) {
+              System.out.println("Error closing files");
+              return;
+           }
+           
+           
        }
     }
 
@@ -57,6 +99,30 @@ public class HarryPotter {
 
     public static void setPlayer(Player player) {
         HarryPotter.player = player;
+    }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        HarryPotter.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        HarryPotter.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        HarryPotter.logFile = logFile;
     }
     
 }

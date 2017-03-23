@@ -7,6 +7,9 @@ package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.control.GameControl;
 import byui.cit260.harryPotter.model.Player;
+import harrypotter.HarryPotter;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -16,6 +19,8 @@ import java.util.Scanner;
 public class StartProgramView {
     
     private String promptMessage;
+    protected final BufferedReader keyboard = HarryPotter.getInFile();
+    protected final PrintWriter console = HarryPotter.getOutFile();
     
     public StartProgramView() {
         this.promptMessage = "\nPlease enter your name: ";
@@ -25,7 +30,7 @@ public class StartProgramView {
 
     private void displayBanner() {
         
-        System.out.println(
+        this.console.println(
                 "\n				     //\\\\\n" +
 "				    //  \\\\\n" +
 "			     / \\   //    \\\\\n" +
@@ -92,30 +97,35 @@ public class StartProgramView {
 }
 
     public String getPlayerName() {
-        Scanner keyboard = new Scanner(System.in); // get inFile for keyboard
+        
         String value = ""; // value to be returned
         boolean valid = false; // initialized not valid
         
+        try {
         while(!valid){ // loop while invalid value is entered
-            System.out.println("\n"+ this.promptMessage);
+            this.console.println("\n"+ this.promptMessage);
         
-            value = keyboard.nextLine(); // get next line typed on keyboard
+            value = this.keyboard.readLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks
         
             if(value.length()<1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: value cannot be blank");
                 continue; 
             }
-        
-            valid = true; // end loop
-        
+            break;
         }
+        }
+        catch(Exception e){
+            ErrorView.display(this.getClass().getName(),"Error reading input: " + e.getMessage());
+            
+        }
+      
         return value; // return value entered
     }
 
     private boolean doAction(String playersName) {
         if (playersName.length() < 2) {
-            System.out.println("\nInvalid player's name: "
+            ErrorView.display(this.getClass().getName(),"\nInvalid player's name: "
                     + "the name must be greater than one character in length.");
             return false;
                     }
@@ -123,7 +133,7 @@ public class StartProgramView {
         Player player = GameControl.createPlayer(playersName);
         
         if (player == null) { // if unsuccessful
-            System.out.println("\nError creating the player.");
+            ErrorView.display(this.getClass().getName(),"\nError creating the player.");
             return false;
         }
         // display next view
@@ -133,7 +143,7 @@ public class StartProgramView {
 
     private void displayNextView(Player player) {
         //display a custome welcome messge
-        System.out.println("\n======================================"
+        this.console.println("\n======================================"
                            +"\n Welcome to the game " + player.getName()
                            +"\n We hope you have a lot of fun!"
                            +"\n======================================"

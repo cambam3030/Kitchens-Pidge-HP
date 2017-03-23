@@ -49,13 +49,13 @@ public class HelpMenuView extends ViewMenu{
                 break;
             case "R"://return to main menu
                 done = true;
-                System.out.println("\n*** Returning ***");
+                this.console.println("\n*** Returning ***");
                 return done;
             case "I": // list of items
                 listItems();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return done;
@@ -64,17 +64,17 @@ public class HelpMenuView extends ViewMenu{
 
 
     private void howToPlay() {
-         System.out.println("\n*** The howToPlay() function was called**");
+         this.console.println("\n*** The howToPlay() function was called**");
           
     }
 
     private void howToMovement() {
-         System.out.println("\n*** The howToMovement() function was called**");
+         this.console.println("\n*** The howToMovement() function was called**");
          
     }
 
     private void whereAmI() {
-         System.out.println("\n*** The whereAmI() function was called**"); // return Player location variable
+         this.console.println("\n*** The whereAmI() function was called**"); // return Player location variable
           
     }
     

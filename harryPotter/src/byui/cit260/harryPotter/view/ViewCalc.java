@@ -39,7 +39,7 @@ public abstract class ViewCalc extends View {
                 realDoubleValue = Double.parseDouble(doubleValue);
                 return realDoubleValue;
             } catch(NumberFormatException nf){
-                System.out.println("Please enter a valid number.");
+                ErrorView.display(this.getClass().getName(),"Please enter a valid number.");
                
             }
             if (!done) {

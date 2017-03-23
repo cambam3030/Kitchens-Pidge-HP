@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Cami
  */
-public class LocationDungeon {
+public class LocationDungeon  {
     public String description;
     public double time;
     public double weight;
@@ -32,10 +32,10 @@ public class LocationDungeon {
             try {
                 done = this.doAction(weightInput, timeInput);
             } catch (InventoryControlException ive) {
-                System.out.println(ive.getMessage());
+                ErrorView.display(this.getClass().getName(),ive.getMessage());
                 
             } catch (Throwable te) {
-                System.out.println(te.getMessage());
+                ErrorView.display(this.getClass().getName(),te.getMessage());
                 te.printStackTrace();
                 //return;
         }
@@ -57,20 +57,20 @@ public class LocationDungeon {
     }
     
     private double getTimeInput() {
-        Scanner keyboard = new Scanner(System.in); // get inFile for keyboard
+       
         
         boolean valid = false; // initialized not valid
-        System.out.println("\n" + this.description);
-        System.out.println("\n Please enter the time requried:");
+        this.console.println("\n" + this.description);
+        this.console.println("\n Please enter the time requried:");
         
         while(!valid){ // loop while invalid value is entered
             
-            timeInput = keyboard.nextLine(); // get next line typed on keyboard            
+            timeInput = this.keyboard.readLine(); // get next line typed on keyboard            
             try {
                 time = Double.parseDouble(timeInput);
                 return time;
             } catch(NumberFormatException nf){
-                    System.out.println("Please enter a valid number.");                    
+                    ErrorView.display(this.getClass().getName(),"Please enter a valid number.");                    
             }
             if (!valid) {
                 continue;
@@ -83,22 +83,22 @@ public class LocationDungeon {
     }
 
     private double getWeightInput() {
-        Scanner keyboard = new Scanner(System.in); // get inFile for keyboard
+        
         
         boolean valid = false; // initialized not valid
         
-        System.out.println("\n Please enter the character's weight:");
+        this.console.println("\n Please enter the character's weight:");
         
         while(!valid){ // loop while invalid value is entered
             
         
-            weightInput = keyboard.nextLine(); // get next line typed on keyboard
+            weightInput = this.keyboard.readLine(); // get next line typed on keyboard
             
             try {
                 weight = Double.parseDouble(weightInput);
                 return weight;
             } catch (NumberFormatException nf) {
-                System.out.println("\n You must enter a valid number");
+                ErrorView.display(this.getClass().getName(),"\n You must enter a valid number");
             }
             
             if(!valid) {
@@ -117,7 +117,7 @@ public class LocationDungeon {
         InventoryControl inventoryControlPolyJuice = new InventoryControl();
         inventoryControlPolyJuice.calcPolyJuice(weightInput, timeInput);
         
-        System.out.println("\n Please take " + inventoryControlPolyJuice.doseInOunces + " ounces for best results!");
+        this.console.println("\n Please take " + inventoryControlPolyJuice.doseInOunces + " ounces for best results!");
         
         return true;
     }

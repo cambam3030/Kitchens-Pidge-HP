@@ -60,9 +60,9 @@ public class MainMenuView extends ViewMenu {
                 try{
                     this.displayLocationDungeonView();
                 } catch (InventoryControlException ive) {
-                    System.out.println(ive.getMessage());
+                    ErrorView.display(this.getClass().getName(),ive.getMessage());
                 } catch (Throwable te){
-                    System.out.println(te.getMessage());
+                    ErrorView.display(this.getClass().getName(),te.getMessage());
                     te.printStackTrace();
                 }
                 break;
@@ -78,7 +78,7 @@ public class MainMenuView extends ViewMenu {
             case "Q":
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -95,7 +95,7 @@ public class MainMenuView extends ViewMenu {
     }
 
     private void startExistingGame() {
-        System.out.println("\n*** The startExistingGame() function was called"); 
+        this.console.println("\n*** The startExistingGame() function was called"); 
     }
 
     private void displayHelpMenuView() {
@@ -109,7 +109,7 @@ public class MainMenuView extends ViewMenu {
        gameMenuView.display();
     }
     private void saveGame() {
-        System.out.println("\n*** The saveGame() function was called"); 
+        this.console.println("\n*** The saveGame() function was called"); 
     }
 
     private void displayLocationPitchView() {

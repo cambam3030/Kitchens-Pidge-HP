@@ -60,38 +60,38 @@ public class SpellsMenuView extends ViewMenu {
         // provide spell description based on choice entered
         switch (choice){
             case "AL": 
-                System.out.println("Alohamora is used to unlock things! Doors, chests, you name it!");
+                this.console.println("Alohamora is used to unlock things! Doors, chests, you name it!");
                 break;
             case "W": 
-                System.out.println("Wingardium Leviosa is used to levitate objects!");
+                this.console.println("Wingardium Leviosa is used to levitate objects!");
                 break;
             case "EX":
-                System.out.println("Expelliarmus is your standard disarming charm against opponents!");
+                this.console.println("Expelliarmus is your standard disarming charm against opponents!");
                 break;
             case "O": 
-                System.out.println("Obliviate is a memory charm! Use wisely.");
+                this.console.println("Obliviate is a memory charm! Use wisely.");
                 break;
             case "L": 
-                System.out.println("Lumos lights the end of your wand so you can see your surroundings better!");
+                this.console.println("Lumos lights the end of your wand so you can see your surroundings better!");
                 break;
             case "N": 
-                System.out.println("Knox removes the light at the end of your wand tip!");
+                this.console.println("Knox removes the light at the end of your wand tip!");
                 break;
             case "PT": 
-                System.out.println("Petrificus Totalis petrifies your opponent, making them stiff as a board!");
+                this.console.println("Petrificus Totalis petrifies your opponent, making them stiff as a board!");
                 break;
             case "FX": 
-                System.out.println("Reparo can be used to repair items and various objects!");
+                this.console.println("Reparo can be used to repair items and various objects!");
                 break;
             case "PR": 
-                System.out.println("Protego is your basic shielding charm to protect yourself!");
+                this.console.println("Protego is your basic shielding charm to protect yourself!");
                 break;    
             case "R":
                 done = true;
-                System.out.println("\n*** Returning ***");
+                this.console.println("\n*** Returning ***");
                 return done;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return done;
