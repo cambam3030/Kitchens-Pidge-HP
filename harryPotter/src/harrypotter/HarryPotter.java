@@ -18,6 +18,7 @@ import byui.cit260.harryPotter.model.Quidditch;
 import byui.cit260.harryPotter.model.ResourceTypeScene;
 import byui.cit260.harryPotter.model.Scene;
 import byui.cit260.harryPotter.model.Spells;
+import byui.cit260.harryPotter.view.ErrorView;
 import byui.cit260.harryPotter.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -59,7 +60,7 @@ public class HarryPotter {
            startProgramView.displayStartProgramView(); 
            return;
        } catch (Throwable te) {
-           System.out.println("Exception: " + te.toString()+
+           ErrorView.display(HarryPotter.class.getName(), "Exception: " + te.toString()+
                                "\nCause: " + te.getCause()+
                                "\nMessage:" + te.getMessage());
            
@@ -77,7 +78,7 @@ public class HarryPotter {
               if (HarryPotter.logFile !=null)
                   HarryPotter.logFile.close();
            } catch (IOException ex) {
-              System.out.println("Error closing files");
+                ErrorView.display(HarryPotter.class.getName(),"Error closing files");
               return;
            }
            

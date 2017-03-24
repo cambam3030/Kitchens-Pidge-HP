@@ -5,6 +5,7 @@
  */
 package byui.cit260.harryPotter.control;
 
+import byui.cit260.harryPotter.exceptions.GameControlException;
 import byui.cit260.harryPotter.model.Game;
 import byui.cit260.harryPotter.model.HousePoints;
 import byui.cit260.harryPotter.model.Inventory;
@@ -14,6 +15,10 @@ import byui.cit260.harryPotter.model.Player;
 import byui.cit260.harryPotter.model.Scene;
 import byui.cit260.harryPotter.model.Scene.SceneType;
 import harrypotter.HarryPotter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -68,11 +73,11 @@ public class GameControl {
     public static void submitHousePoints(){
         int housePoints[] = {500, 600, 700, 800};
         
-        this.console.println("\n\t HOUSE POINTS");
+        /*this.console.println("\n\t HOUSE POINTS");
         this.console.println(" Hufflepuff has " + housePoints[0] + " house points!");
         this.console.println(" Ravenclaw has " + housePoints[1] + " house points!");
         this.console.println(" Slytherin has " + housePoints[2] + " house points!");
-        this.console.println(" Gryffindor has " + housePoints[3] + " house points!");
+        this.console.println(" Gryffindor has " + housePoints[3] + " house points!");*/
         
         findMinMaxPoints(housePoints);
     }
@@ -86,7 +91,36 @@ public class GameControl {
             if(housePoints[i] > max) max = housePoints[i];
         }
         
-        this.console.println("\n Minimum and Maximum House Points: " + min + " and " + max);
+        /*this.console.println("\n Minimum and Maximum House Points: " + min + " and " + max);*/
+    }
+
+    public static void saveGame(Game currentGame, String filePath) 
+            throws GameControlException{
+            try(FileOutputStream fops = new FileOutputStream(filePath)){
+                ObjectOutputStream output = new ObjectOutputStream(fops);
+                
+                output.writeObject(currentGame);
+                //write the game object to a file
+            }
+       catch(Exception e){
+           throw new GameControlException(e.getMessage());
+       }
+    }
+
+    public static void getSavedGame(String filePath) 
+            throws GameControlException{ 
+           Game game = null;
+           try(FileInputStream fips = new FileInputStream(filePath)){
+               ObjectInputStream input = new ObjectInputStream (fips);
+               
+               game = (Game) input.readObject();
+           }catch (Exception e){
+               throw new GameControlException (e.getMessage());
+           }
+           //close the output file
+           HarryPotter.setCurrentGame(game);
+           //save in HarryPotter
+       
     }
     
 

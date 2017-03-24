@@ -95,7 +95,19 @@ public class MainMenuView extends ViewMenu {
     }
 
     private void startExistingGame() {
-        this.console.println("\n*** The startExistingGame() function was called"); 
+        this.console.println("\n*Enter the file path for your saved game"); 
+        String filePath = this.getInput();
+        
+        try{
+            //save the existing game to a specified file 
+            GameControl.getSavedGame(filePath);
+        }catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        //display te game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void displayHelpMenuView() {
@@ -109,7 +121,16 @@ public class MainMenuView extends ViewMenu {
        gameMenuView.display();
     }
     private void saveGame() {
-        this.console.println("\n*** The saveGame() function was called"); 
+        this.console.println("\n*\nEnter the file path for your saved game."); 
+        String filePath = this.getInput();
+        
+        try{
+            //save the game to a specified file
+            GameControl.saveGame(HarryPotter.getCurrentGame(), filePath);
+        }catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+               
     }
 
     private void displayLocationPitchView() {
@@ -120,7 +141,7 @@ public class MainMenuView extends ViewMenu {
     private void displayLocationDungeonView() 
             throws InventoryControlException {
          LocationDungeon locationDungeon = new LocationDungeon();
-         locationDungeon.displayLocationDungeonView();
+         //locationDungeon.displayLocationDungeonView();
     }
 
     private void displayLocationGringottsView() {
