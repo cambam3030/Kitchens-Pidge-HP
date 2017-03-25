@@ -26,7 +26,7 @@ public abstract class ViewMenu extends View {
     public void display() {
         boolean done = false;
         do {
-            // prompt for and get player name
+            // prompt for and get player input
             String userChoice = getInput(displayMessage);
             
             

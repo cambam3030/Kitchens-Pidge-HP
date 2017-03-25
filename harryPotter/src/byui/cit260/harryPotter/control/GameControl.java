@@ -118,8 +118,7 @@ public class GameControl {
                throw new GameControlException (e.getMessage());
            }
            //close the output file
-           HarryPotter.setCurrentGame(game);
-           //save in HarryPotter
+           HarryPotter.setCurrentGame(game);//save in HarryPotter
        
     }
     

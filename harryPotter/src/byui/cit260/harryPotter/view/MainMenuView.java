@@ -95,8 +95,8 @@ public class MainMenuView extends ViewMenu {
     }
 
     private void startExistingGame() {
-        this.console.println("\n*Enter the file path for your saved game"); 
-        String filePath = this.getInput();
+         
+        String filePath = this.getInput("\n*Enter the file path for your saved game");
         
         try{
             //save the existing game to a specified file 
@@ -105,6 +105,7 @@ public class MainMenuView extends ViewMenu {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
         
+        console.println(HarryPotter.getCurrentGame().getPlayer().getName());
         //display te game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
@@ -121,8 +122,7 @@ public class MainMenuView extends ViewMenu {
        gameMenuView.display();
     }
     private void saveGame() {
-        this.console.println("\n*\nEnter the file path for your saved game."); 
-        String filePath = this.getInput();
+        String filePath = getInput("\n*\nEnter the file path for your saved game.");
         
         try{
             //save the game to a specified file
