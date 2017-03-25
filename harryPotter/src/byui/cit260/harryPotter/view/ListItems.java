@@ -61,11 +61,32 @@ public class ListItems extends ViewMenu {
 
     private void printItems() {
         String filePath = getInput("\n*\nEnter the file path for your saved game.");
+        StringBuilder line;
+        
+        String[] items = Inventory.printItems();
+        this.console.println("\n  LIST OF INVENTORY ITEMS");
+        line = new StringBuilder("                                    ");
+        line.insert(0, "DESCRIPTION");
+        line.insert(20, "REQUIRED");
+        line.insert(30, "IN STOCK");
+        this.console.println(line.toString());
+        
+        //for each inventory item 
+        for (String item : items){
+            line = new StringBuilder("                                       ");
+            line.insert(0,item);
+            
+            
+            
+            //DISPAY the line
+            this.console.println(line.toString());
+        }
+        
         
         try{
             //save the game to a specified file
-            GameControl.printItemList(Inventory.printItems(), filePath);
-            console.println("Item list successfully printed.");
+            GameControl.printItemList(items, filePath);
+            console.println("\nItem list successfully printed.");
         }catch (Exception ex){
             ErrorView.display("ListItems", ex.getMessage());
         }

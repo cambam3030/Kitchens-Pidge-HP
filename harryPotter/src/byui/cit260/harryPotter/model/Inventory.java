@@ -52,9 +52,9 @@ public class Inventory implements Serializable{
          }       
     
     public static String[] printItems(){
-        String[] items = {"wand, invisibility cloak, time turner, owl, polyjuice potion,"
-                + " felix felicis, mandrake root, bezoar, dittany, dragons blood, broomstick,"
-                + " potions book, cauldron, library pass, snitch"};        
+        String[] items = {"wand", "invisibility cloak", "time turner", "owl", "polyjuice potion",
+                 "felix felicis", "mandrake root", "bezoar", "dittany", "dragons blood", "broomstick",
+                 "potions book", "cauldron", "library pass", "snitch"};        
         return items;
     }
     public double getAmountNeeded() {
