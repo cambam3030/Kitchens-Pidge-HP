@@ -104,7 +104,7 @@ public class MainMenuView extends ViewMenu {
         }catch (Exception ex){
             ErrorView.display("MainMenuView", ex.getMessage());
         }
-        
+        console.println("\n Currently playing as: ");
         console.println(HarryPotter.getCurrentGame().getPlayer().getName());
         //display te game menu
         GameMenuView gameMenu = new GameMenuView();
