@@ -20,16 +20,18 @@ public class Inventory implements Serializable{
     private double amountNeeded;
     private double stockAvailable;
     private String name;
+    public static String[] items;
 
     public Inventory() {
+        
     }
     public Inventory(String name, double amountNeeded, double stockAvailable){
-         createInventory();
+         //createInventory();
          }
      public static Inventory[]  createInventory(){
              //create public static new list of inventory items
              
-             Inventory[] inventory = new Inventory [15];
+             Inventory[] inventory = new Inventory[15];
              inventory[0] = new Inventory("wand", 1, 0);
              inventory[1] = new Inventory("invisibility cloak", 1, 0);
              inventory[2] = new Inventory("time turner", 1, 0);
@@ -49,6 +51,12 @@ public class Inventory implements Serializable{
              return inventory;                     
          }       
     
+    public static String[] printItems(){
+        String[] items = {"wand, invisibility cloak, time turner, owl, polyjuice potion,"
+                + " felix felicis, mandrake root, bezoar, dittany, dragons blood, broomstick,"
+                + " potions book, cauldron, library pass, snitch"};        
+        return items;
+    }
     public double getAmountNeeded() {
         return amountNeeded;
     }
@@ -72,6 +80,15 @@ public class Inventory implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
+
+    public static String[] getItems() {
+        return items;
+    }
+
+    public static void setItems(String[] items) {
+        Inventory.items = items;
+    }
+
 
     @Override
     public int hashCode() {

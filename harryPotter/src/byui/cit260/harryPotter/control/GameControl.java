@@ -121,6 +121,20 @@ public class GameControl {
            HarryPotter.setCurrentGame(game);//save in HarryPotter
        
     }
+
+
+    public static void printItemList(String[] printItems, String filePath) 
+            throws GameControlException {
+        try(FileOutputStream fops = new FileOutputStream(filePath)){
+                ObjectOutputStream output = new ObjectOutputStream(fops);
+                
+                output.writeObject(printItems);
+                //write the game object to a file
+            }
+       catch(Exception e){
+           throw new GameControlException(e.getMessage());
+       }
+    }
     
 
 }

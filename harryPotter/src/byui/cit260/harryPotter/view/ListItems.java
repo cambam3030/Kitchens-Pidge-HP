@@ -5,12 +5,16 @@
  */
 package byui.cit260.harryPotter.view;
 
+import byui.cit260.harryPotter.control.GameControl;
+import byui.cit260.harryPotter.model.Inventory;
+import harrypotter.HarryPotter;
+
 /**
  *
  * @author chriskitchens
  */
 public class ListItems extends ViewMenu {
-    
+       
     public ListItems() {
         super("\n The following items will be seen throughout the game:"
                 + "\n 1. Wand"
@@ -30,7 +34,9 @@ public class ListItems extends ViewMenu {
                 + "\n 9. Cauldron"
                 + "\n 10.Library pass to restricted section"
                 + "\n 11.Snitch"
-                + "\n ** Press 'R' to return **");
+                + "\n"
+                + "\n ** Press 'R' to return **"
+                + "\n ** Press 'P' to print list to file **");
 }
     @Override
     public boolean doAction(String choice) {
@@ -40,11 +46,28 @@ public class ListItems extends ViewMenu {
         switch (choice) {
             case "R": //return
                 done = true;
+                break;
+            case "P": //print item list to file
+                printItems();
+                done = true;
+                break;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
         return done;
+    }
+
+    private void printItems() {
+        String filePath = getInput("\n*\nEnter the file path for your saved game.");
+        
+        try{
+            //save the game to a specified file
+            GameControl.printItemList(Inventory.printItems(), filePath);
+            console.println("Item list successfully printed.");
+        }catch (Exception ex){
+            ErrorView.display("ListItems", ex.getMessage());
+        }
     }
 }
