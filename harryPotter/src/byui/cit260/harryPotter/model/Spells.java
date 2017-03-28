@@ -25,6 +25,12 @@ public enum Spells implements Serializable {
     Reparo("Repair"),
     Protego("Sheild");
 
+    public static String[] printSpells() {
+        String[] spells = {"Alohamora ", "Wingardium Leviosa", "Expelliarmus", "Obliviate",        
+        " Lumos", "Knox", "Felix Felices", "Petrificus Totalis", "Reparo", "Protego"};
+        return spells;
+    }
+
     private String effect;
 
     Spells(String effect) {

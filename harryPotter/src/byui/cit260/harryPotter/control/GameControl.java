@@ -135,6 +135,19 @@ public class GameControl {
            throw new GameControlException(e.getMessage());
        }
     }
+
+    public static void printSpellsList(String[] printSpells, String filePath)
+        throws GameControlException {
+        try(FileOutputStream fops = new FileOutputStream(filePath)){
+                ObjectOutputStream output = new ObjectOutputStream(fops);
+                
+                output.writeObject(printSpells);
+                //write the game object to a file
+            }
+       catch(Exception e){
+           throw new GameControlException(e.getMessage());
     
 
+}
+    }
 }
