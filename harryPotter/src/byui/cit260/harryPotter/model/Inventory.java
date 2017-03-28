@@ -25,10 +25,15 @@ public class Inventory implements Serializable{
     public Inventory() {
         
     }
+    
     public Inventory(String name, double amountNeeded, double stockAvailable){
-         //createInventory();
+         setName(name);
+         setAmountNeeded(amountNeeded);
+         setStockAvailable(stockAvailable);
+         
          }
-     public static Inventory[]  createInventory(){
+     
+    public static Inventory[] createInventory(){
              //create public static new list of inventory items
              
              Inventory[] inventory = new Inventory[15];

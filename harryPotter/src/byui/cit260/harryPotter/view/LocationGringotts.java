@@ -16,7 +16,7 @@ public class LocationGringotts extends ViewCalc{
     
     @Override
     public void display() {
-       //* System.out.println(displayMessage);
+        console.println(displayMessage);
         boolean done = false;
         do {
             // prompt for galleons and sickles
@@ -41,13 +41,12 @@ public class LocationGringotts extends ViewCalc{
     
 
     public LocationGringotts() {
-        super(  "\n Welcome to Gringotts! It's time to exchange your"
+        displayMessage =  "\n Welcome to Gringotts! It's time to exchange your"
                 + "\n wizzarding money for US dollars. You will need to enter in"
                 + "\n the amount of galleons and sickles you have left. The goblins"
                 + "\n will do some quick calulating and tell you what you have left"
                 + "\n in US dollars. The galleons and sickles amount cannot be"
-                + "\n less than 0 or greater than 1000."
-        )
+                + "\n less than 0 or greater than 1000."        
                 ;
     }
     

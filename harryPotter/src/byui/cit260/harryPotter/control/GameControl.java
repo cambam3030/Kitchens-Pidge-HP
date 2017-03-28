@@ -48,8 +48,8 @@ public class GameControl {
         game.setPlayer(player); // save player in game
         
         // create the inventory list and save in the game
-        Inventory[] inventoryList = GameControl.createInventoryList();
-        game.setInventory(inventoryList);
+        Inventory[] inventory = GameControl.createInventoryList();
+        game.setInventory(inventory);
         
         //Character[] character = GameControl.createCharacter();
         //game.setCharacter(character);
@@ -66,7 +66,10 @@ public class GameControl {
 
     private static Inventory[] createInventoryList() {//don't need data types, just parameter names * needs fix
         //Inventory inventory = new Inventory(name, amountNeeded, stockAvailable);
-        return null;
+        
+        Inventory[] inventory = Inventory.createInventory();
+        
+        return inventory;
     }
     
     
