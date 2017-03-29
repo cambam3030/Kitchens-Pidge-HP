@@ -7,6 +7,9 @@ package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.control.InventoryControl;
 import byui.cit260.harryPotter.exceptions.InventoryControlException;
+import byui.cit260.harryPotter.model.Game;
+import byui.cit260.harryPotter.model.Location;
+import byui.cit260.harryPotter.model.Map;
 
 
 /**
@@ -21,7 +24,11 @@ public class LocationPitch extends ViewCalc{
     public void display() {
         boolean done = false;
         do {
-            // prompt for and get player name
+            
+            //Game.map.setColumnCount(2);
+            //Game.map.setRowCount(3);
+            
+            console.println(displayMessage);
             double speed = this.getDoubleInput("Please enter desired speed:");
             if (speed < 60) {
                 ErrorView.display(this.getClass().getName(),"Speed must be between 60 and 200.");

@@ -122,14 +122,14 @@ public class MainMenuView extends ViewMenu {
        gameMenuView.display();
     }
     private void saveGame() {
-        String filePath = getInput("\n*\nEnter the file path for your saved game.");
+        /*String filePath = getInput("\n*\nEnter the file path for your saved game.");
         
         try{
             //save the game to a specified file
             GameControl.saveGame(HarryPotter.getCurrentGame(), filePath);
         }catch (Exception ex){
             ErrorView.display("MainMenuView", ex.getMessage());
-        }
+        }*/
                
     }
 
