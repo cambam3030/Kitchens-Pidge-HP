@@ -5,6 +5,7 @@
  */
 package byui.cit260.harryPotter.view;
 
+import byui.cit260.harryPotter.control.GameControl;
 import byui.cit260.harryPotter.model.Spells;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +50,7 @@ public class SpellsMenuView extends ViewMenu {
                 + "\n FX - Reparo"
                 + "\n PR - Protego"
                 + "\n\t *R  - Return to previous menu*"
+                + "\n\t *P - Print Spells list*"
                 + "\n----------------------------------------------------------");
     }
 
@@ -85,7 +87,11 @@ public class SpellsMenuView extends ViewMenu {
                 break;
             case "PR": 
                 this.console.println("Protego is your basic shielding charm to protect yourself!");
-                break;    
+                break; 
+            case "P":
+                this.console.println("Print a list of Spells");
+                printItems();
+                break;
             case "R":
                 done = true;
                 this.console.println("\n*** Returning ***");
@@ -97,6 +103,38 @@ public class SpellsMenuView extends ViewMenu {
         return done;
     }
 
+        private void printItems() {
+        String filePath = getInput("\n*\nEnter the file path for your saved game.");
+        StringBuilder line;
+        
+        String[] spells = Spells.printSpells();
+        this.console.println("\n  LIST OF SPELLS");
+        line = new StringBuilder("                                    ");
+        line.insert(0, "EFFECT");
+        line.insert(20, "IN STOCK");
+        this.console.println(line.toString());
+        
+        //for each inventory item 
+        for (String item : spells){
+            line = new StringBuilder("                                       ");
+            line.insert(0,item);
+            
+            
+            
+            //DISPAY the line
+            this.console.println(line.toString());
+        }
+        
+        
+        try{
+            //save the game to a specified file
+            GameControl.printSpellsList(spells, filePath);
+            console.println("\nSpells list successfully printed.");
+        }catch (Exception ex){
+            ErrorView.display("ListSpells", ex.getMessage());
+        }
+    }
+}
 
     
-}
+

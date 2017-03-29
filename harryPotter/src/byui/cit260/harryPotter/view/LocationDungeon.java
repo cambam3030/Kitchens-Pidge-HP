@@ -13,13 +13,13 @@ import java.util.Scanner;
  *
  * @author Cami
  */
-public class LocationDungeon {
+public class LocationDungeon extends ViewCalc {
     public String description;
     public double time;
     public double weight;
     public String weightInput;
     public String timeInput;
-  /*  
+    
     public void displayLocationDungeonView() 
             throws InventoryControlException {
         
@@ -120,5 +120,5 @@ public class LocationDungeon {
         this.console.println("\n Please take " + inventoryControlPolyJuice.doseInOunces + " ounces for best results!");
         
         return true;
-    }*/
+    }
 }
