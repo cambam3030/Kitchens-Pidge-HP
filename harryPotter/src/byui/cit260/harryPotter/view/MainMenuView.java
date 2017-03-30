@@ -63,7 +63,6 @@ public class MainMenuView extends ViewMenu {
                     ErrorView.display(this.getClass().getName(),ive.getMessage());
                 } catch (Throwable te){
                     ErrorView.display(this.getClass().getName(),te.getMessage());
-                    te.printStackTrace();
                 }
                 break;
             case "B"://test for LocationGringotts class -- this will not be included here and is only used as test
