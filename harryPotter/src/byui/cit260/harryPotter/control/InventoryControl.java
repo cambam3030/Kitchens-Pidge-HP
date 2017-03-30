@@ -27,7 +27,7 @@ public class InventoryControl {
         }
 
 	if (time < 60 || time > 190){ 
-		throw new InventoryControlException("Time must be between 60 and 190 seconds.");
+		throw new InventoryControlException("Time must be between 60 and 190 minutes.");
         }
 
 	doseInOunces = (weight*2.2)*(time*.00072);

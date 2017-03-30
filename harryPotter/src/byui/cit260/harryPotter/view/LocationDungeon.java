@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,44 +7,39 @@ package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.control.InventoryControl;
 import byui.cit260.harryPotter.exceptions.InventoryControlException;
-import java.util.Scanner;
 
 /**
  *
  * @author Cami
  */
 public class LocationDungeon extends ViewCalc {
-    public String description;
-    public double time;
-    public double weight;
-    public String weightInput;
-    public String timeInput;
-    
-    public void displayLocationDungeonView() 
-            throws InventoryControlException {
-        
-        boolean done = false; // begin false for loop
-        
-        while (done == false){
+  
+    @Override
+    public void display() {
+        console.println(displayMessage); 
+        boolean done = false; // begin false for loop   
+        do{
+            //prompt for time and weight. 
             
-            double timeInput = this.getTimeInput();
-            double weightInput = this.getWeightInput();
+            double time = this.getDoubleInput("Please enter time needed:");
+            double weight = getDoubleInput("Please enter character's weight");
+
+                      
             try {
-                done = this.doAction(weightInput, timeInput);
+                done = doAction(weight, time);
             } catch (InventoryControlException ive) {
                 ErrorView.display(this.getClass().getName(),ive.getMessage());
-                
+                return;                
             } catch (Throwable te) {
                 ErrorView.display(this.getClass().getName(),te.getMessage());
                 te.printStackTrace();
-                //return;
-        }
+                return;
+            }
+            } while(!done); //exit view when done == true
     }
-    }
-  
-
+      
     public LocationDungeon() {
-        this.description = "\n Welcome to the Dungeons! Today we're going"
+        displayMessage = "\n Welcome to the Dungeons! Today we're going"
                 + "\n to calculate the does of Poly Juice potion needed to"
                 + "\n disguise your character based on their weight and the"
                 + "\n time they need to be disguesed."
@@ -56,63 +51,8 @@ public class LocationDungeon extends ViewCalc {
                 ;
     }
     
-    private double getTimeInput() {
-       
-        
-        boolean valid = false; // initialized not valid
-        this.console.println("\n" + this.description);
-        this.console.println("\n Please enter the time requried:");
-        
-        while(!valid){ // loop while invalid value is entered
-            
-            timeInput = this.keyboard.readLine(); // get next line typed on keyboard            
-            try {
-                time = Double.parseDouble(timeInput);
-                return time;
-            } catch(NumberFormatException nf){
-                    ErrorView.display(this.getClass().getName(),"Please enter a valid number.");                    
-            }
-            if (!valid) {
-                continue;
-            } else {             
-            }
-            break;// end loop
-        
-        }
-        return time; // return value entered
-    }
-
-    private double getWeightInput() {
-        
-        
-        boolean valid = false; // initialized not valid
-        
-        this.console.println("\n Please enter the character's weight:");
-        
-        while(!valid){ // loop while invalid value is entered
-            
-        
-            weightInput = this.keyboard.readLine(); // get next line typed on keyboard
-            
-            try {
-                weight = Double.parseDouble(weightInput);
-                return weight;
-            } catch (NumberFormatException nf) {
-                ErrorView.display(this.getClass().getName(),"\n You must enter a valid number");
-            }
-            
-            if(!valid) {
-                continue;
-            } else {
-            }
-            
-            break; // end loop
-        
-        }
-        return weight; // return value entered
-    }
-        
-    private boolean doAction(double weightInput, double timeInput) 
+           
+    public boolean doAction(double weightInput, double timeInput) 
             throws InventoryControlException {
         InventoryControl inventoryControlPolyJuice = new InventoryControl();
         inventoryControlPolyJuice.calcPolyJuice(weightInput, timeInput);

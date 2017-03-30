@@ -22,9 +22,7 @@ public class LocationGringotts extends ViewCalc{
             // prompt for galleons and sickles
             double galleons = this.getDoubleInput("Please enter galleons:");
             double sickles = getDoubleInput("Please enter sickles:");
-            
-                
-            
+                        
             // do requested action and display next view
             try {
                 done = doAction(galleons, sickles);
