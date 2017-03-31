@@ -9,6 +9,27 @@ package byui.cit260.harryPotter.view;
  *
  * @author Cami
  */
-public class LocationRoomOfRequirements {
+
+    public class LocationRoomOfRequirements extends ViewMenu{
     
+    public LocationRoomOfRequirements(){
+        super("");
+    }
+    
+    @Override
+    public boolean doAction(String choice){
+        
+        choice = choice.toUpperCase();
+        boolean done = false;
+        
+        switch(choice) {
+            case "":
+            
+            default:
+                this.console.println("\n*** Invalid selection *** Try again ***");
+                break;
+        }
+        return false;
+    }    
 }
+

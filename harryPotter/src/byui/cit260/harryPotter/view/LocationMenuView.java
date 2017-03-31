@@ -37,7 +37,7 @@ public class LocationMenuView extends ViewMenu{
                 + "\n HT - Transfiguration"
                 + "\n HA - Hagrid's Hut"
                 + "\n HF - Forbidden Forest"
-                + "\n HR - Room of Requirement"
+                + "\n HR - Room of Requirements"
                 + "\n HO - Headmaster's Office"
                 + "\n"
                 + "\n HELP - Help Menu"
@@ -112,10 +112,10 @@ public class LocationMenuView extends ViewMenu{
                     forbiddenForest();
                     break;
                 case "HR": //room of requirement
-                    roomOfRequirement();
+                    roomOfRequirements();
                     break;
                 case "HO": //headmaster's office
-                    headmastersOffice();
+                    headMastersOffice();
                     break;
                 case "E": //exit menu
                     done = true;
@@ -175,39 +175,46 @@ public class LocationMenuView extends ViewMenu{
     }
 
     private void dormitory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LocationDormitory locationDormitory = new LocationDormitory();
+        locationDormitory.display();
     }
-
     private void charms() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LocationCharms locationCharms = new LocationCharms();
+        locationCharms.display();
     }
-
     private void herbology() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LocationHerbology locationHerbology = new LocationHerbology();
+        locationHerbology.display();
     }
 
     private void library() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LocationLibrary locationLibrary = new LocationLibrary();
+        locationLibrary.display();
     }
 
     private void transfiguration() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LocationTransfiguration locationTransfiguration = new LocationTransfiguration();
+        locationTransfiguration.display();
     }
 
     private void hagridsHut() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LocationHagridsHut locationHagridsHut = new LocationHagridsHut();
+        locationHagridsHut.display();
     }
 
     private void forbiddenForest() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LocationForbiddenForest locationForbiddenForest = new LocationForbiddenForest();
+        locationForbiddenForest.display();
     }
 
-    private void roomOfRequirement() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void roomOfRequirements() {
+        LocationRoomOfRequirements locationRoomOfRequirements = new LocationRoomOfRequirements();
+        locationRoomOfRequirements.display();
     }
 
-    private void headmastersOffice() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void headMastersOffice() {
+        LocationHeadMastersOffice locationHeadMastersOffice = new LocationHeadMastersOffice();
+        locationHeadMastersOffice.display();
     }
 
     private void dungeons() {

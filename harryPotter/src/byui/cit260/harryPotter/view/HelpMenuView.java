@@ -23,8 +23,7 @@ public class HelpMenuView extends ViewMenu{
                + "\n| Help Menu                              |"
                + "\n------------------------------------------"
                + "\nH - How to Play"
-               + "\nM - Movement"
-               + "\nW - Where am I?"
+               + "\nM - How to Move"
                + "\nI - List of items"
                + "\nR - Return"
                + "\n------------------------------------------");
@@ -42,10 +41,7 @@ public class HelpMenuView extends ViewMenu{
                 this.howToPlay();
                 break;
             case "M": //how to move
-                this.howToMovement();
-                break;
-            case "W":// display user's current location
-                this.whereAmI();
+                this.howToMove();
                 break;
             case "R"://return to main menu
                 done = true;
@@ -64,19 +60,23 @@ public class HelpMenuView extends ViewMenu{
 
 
     private void howToPlay() {
-         this.console.println("\n*** The howToPlay() function was called**");
+         this.console.println("\n*** Navigate your way through the wizzarding "
+                 + "world. Visit the Locations in order and complete the tasks "
+                 + "required. Earn House Points along the way. When you have completed"
+                 + "your tasks, report to the Headmaster at the end of the game to"
+                 + "get your final score.  **");
           
     }
 
-    private void howToMovement() {
-         this.console.println("\n*** The howToMovement() function was called**");
+    private void howToMove() {
+         this.console.println("\n*** From the Game Menu, select the T to bring up"
+                 + "the menu for locations you can travel to in the game. Make a"
+                 + "selection for the next location you would like to go to. The "
+                 + "locations must be traveled in order and steps cannot be "
+                 + "skipped. Good luck!**");
          
     }
 
-    private void whereAmI() {
-         this.console.println("\n*** The whereAmI() function was called**"); // return Player location variable
-          
-    }
     
     private void listItems() {
         ListItems listItems = new ListItems();

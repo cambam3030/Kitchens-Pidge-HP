@@ -9,6 +9,27 @@ package byui.cit260.harryPotter.view;
  *
  * @author Cami
  */
-public class LocationDormitory {
+    public class LocationDormitory extends ViewMenu{
     
+    public LocationDormitory(){
+        super("");
+    }
+    
+    @Override
+    public boolean doAction(String choice){
+        
+        choice = choice.toUpperCase();
+        boolean done = false;
+        
+        switch(choice) {
+            case "":
+            
+            default:
+                this.console.println("\n*** Invalid selection *** Try again ***");
+                break;
+        }
+        return false;
+    }    
 }
+    
+

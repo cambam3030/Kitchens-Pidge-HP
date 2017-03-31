@@ -124,7 +124,32 @@ public class GameMenuView extends ViewMenu{
     }
 
     private void charactersMet() {
-        this.console.println("The charcatersMet() function was called."); 
+        this.console.println("In this game you may run across the following characters"
+                + "\n Hagrid"
+                + "\n Ron" 
+                + "\n Hermione" 
+                + "\n Harry" 
+                + "\n Ginny" 
+                + "\n Fred and George" 
+                + "\n Malfoy" 
+                + "\n Peeves" 
+                + "\n Filch" 
+                + "\n Professor Snape" 
+                + "\n Professor Lupin" 
+                + "\n Professor Bins"
+                + "\n Professor Mcgonagall"
+                + "\n Professor Dumbledore"
+                + "\n Madam Pompfrey"
+                + "\n Gringots Goblin"
+                + "\n Ollivander"
+                + "\n Firenze "
+                + "\n Aragog"
+                + "\n Death Eater"
+                + "\n Moaning Myrtle"
+                + "\n Luna Lovegood"
+                + "\n Neville Longbottom"
+                + "\n Minister of Magic"
+                + "\n Dementors  "); 
     }
     
     private void housePoints() {

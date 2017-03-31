@@ -9,9 +9,10 @@ package byui.cit260.harryPotter.view;
  *
  * @author Cami
  */
-   public class LocationCharms extends ViewMenu{
+
+        public class LocationLibrary extends ViewMenu{
     
-    public LocationCharms(){
+    public LocationLibrary(){
         super("");
     }
     
@@ -31,5 +32,4 @@ package byui.cit260.harryPotter.view;
         return false;
     }    
 }
-    
 

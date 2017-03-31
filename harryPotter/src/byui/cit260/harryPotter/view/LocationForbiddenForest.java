@@ -9,6 +9,26 @@ package byui.cit260.harryPotter.view;
  *
  * @author Cami
  */
-public class LocationForbiddenForest {
+    public class LocationForbiddenForest extends ViewMenu{
     
+    public LocationForbiddenForest(){
+        super("");
+    }
+    
+    @Override
+    public boolean doAction(String choice){
+        
+        choice = choice.toUpperCase();
+        boolean done = false;
+        
+        switch(choice) {
+            case "":
+            
+            default:
+                this.console.println("\n*** Invalid selection *** Try again ***");
+                break;
+        }
+        return false;
+    }    
 }
+    

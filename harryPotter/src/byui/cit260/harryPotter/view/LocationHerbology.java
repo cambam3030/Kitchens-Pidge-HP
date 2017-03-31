@@ -9,9 +9,9 @@ package byui.cit260.harryPotter.view;
  *
  * @author Cami
  */
-   public class LocationCharms extends ViewMenu{
+    public class LocationHerbology extends ViewMenu{
     
-    public LocationCharms(){
+    public LocationHerbology(){
         super("");
     }
     
@@ -31,5 +31,5 @@ package byui.cit260.harryPotter.view;
         return false;
     }    
 }
-    
 
+ 
