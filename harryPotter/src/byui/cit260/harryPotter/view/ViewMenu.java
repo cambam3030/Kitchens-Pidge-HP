@@ -38,6 +38,21 @@ public abstract class ViewMenu extends View {
     }
     
     public abstract boolean doAction(String prompt);
+    
+    public void displayMainMenu() {
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
+    }
+    
+    public void displayGameMenu(){
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+    }
+    
+    public void displayHelpMenu(){
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();
+    }
    
     
 }

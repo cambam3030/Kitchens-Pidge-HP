@@ -30,8 +30,7 @@ public class GameMenuView extends ViewMenu{
                + "\n------------------------------------------"
                + "\n| Game Menu                              |"
                + "\n------------------------------------------"
-               + "\n P - Pause"
-               + "\n R - Resume"
+               + "\n T - Travel to a location within the game"
                + "\n I - Inventory"
                + "\n SP- Spells"
                + "\n C - Characters Met"
@@ -48,11 +47,8 @@ public class GameMenuView extends ViewMenu{
         choice = choice.toUpperCase(); //convert choice to upper case
      boolean done = false;    
         switch (choice){
-            case "P": //Pause game
-                this.pauseGame();
-                break;
-            case "R": //Resume Game
-                this.resumeGame();
+            case "T": // LocationMenuView
+                locationMenuView();
                 break;
             case "I":// View Inventory
                 this.viewInventory();
@@ -86,6 +82,7 @@ public class GameMenuView extends ViewMenu{
         return false;
         
     }
+    
     private void saveGame() {
         String filePath = getInput("\n*\nEnter the file path for your saved game.");
         
@@ -95,14 +92,6 @@ public class GameMenuView extends ViewMenu{
         }catch (Exception ex){
             ErrorView.display("GameMenuView", ex.getMessage());
         } 
-    }
-
-    private void pauseGame() {
-       this.console.println("The pauseGame() function was called."); 
-    }
-
-    private void resumeGame() {
-        this.console.println("The resumeGame() function was called."); 
     }
 
     private void viewInventory() {
@@ -143,12 +132,10 @@ public class GameMenuView extends ViewMenu{
     }
     
     private void helpMenu() {
-        this.console.println("The helpMenu() function was called."); 
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();    
     }
 
-    void displayMenu() {
-        this.console.println("The displayMenu() function was called."); 
-    }
 
     private void displayMap() {
         StringBuilder line;
@@ -174,26 +161,12 @@ public class GameMenuView extends ViewMenu{
             }
             this.console.println();
             
-        } 
-         
-        
-        
+        }         
+    }
 
-/*PRINT a row divider
- PRINT the row number on a new line
- FOR every column in row
- PRINT a column divider
- location = locations[row][column]
- IF location has been visited
- PRINT the mapSymbol in the scene in this location
- ELSE
- DISPLAY " ?? "
- ENDIF
- PRINT the ending column divider
- ENDFOR
- PRINT ending row divider
-END*/
-        
+    private void locationMenuView() {
+        LocationMenuView locationMenuView = new LocationMenuView();
+        locationMenuView.display();
     }
 
 

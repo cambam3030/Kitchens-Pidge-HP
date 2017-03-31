@@ -10,7 +10,6 @@ import byui.cit260.harryPotter.model.Player;
 import harrypotter.HarryPotter;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.util.Scanner;
 
 /**
  *
@@ -55,24 +54,15 @@ public class StartProgramView {
 "|  |    \n"
               + "\n********************************************************"
               + "\n* This text-based game takes players throughout        *"
-              + "\n* the world of Harry Potter. Users will discover       *"
-              + "\n* they’re a wizard/witch, obtain school supplies       *"
-              + "\n* of their choice, attend school and learn spells,     *"
-              + "\n* and use these spells to defend and assist            *"
-              + "\n* themselves as they explore the world. As players     *"
-              + "\n* learn and explore, they are awarded “House Points”   *"
-              + "\n* which are spent on mulligans and various items.      *"
-              + "\n* The end of the game will be a “menu-disabled” duel   *"
-              + "\n* where the user will win or lose. The game begins     *"
-              + "\n* with the player discovering they’re a wizard and     *"
-              + "\n* receiving a letter to Hogwarts. They then travel     *"
-              + "\n* to Diagon Alley to obtain school supplies before     *"
-              + "\n* arriving at the school. Once there, they answer a    *"
-              + "\n* series of questions to be sorted into their House    *"
-              + "\n* and begin their adventures of attending classes      *"
-              + "\n* where skills and spells are obtained. All classes    *"
-              + "\n* must be complete before the user takes their         *"
-              + "\n* O.W.L.s and are allowed to advance to the final duel.*"
+              + "\n* the world of Harry Potter. The game begins with the  *"
+              + "\n* player discovering they're a wizard/witch and        *"
+              + "\n* receiving a letter to Hogwarts. They then travel to  *"
+              + "\n* Diagon Alley to obtain school supplies before        *"
+              + "\n* arriving at Hogwarts. Once there, they answer a      *"
+              + "\n* series of questions to be sorted into their House.   *"
+              + "\n* They are then free to begin their adventures of      *"
+              + "\n* attending classes, earning House Points and exploring*"
+              + "\n* the world of Harry Potter.                           *"
               + "\n********************************************************"
               );
     }
