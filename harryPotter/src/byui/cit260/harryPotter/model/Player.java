@@ -17,8 +17,17 @@ public class Player implements Serializable{
     //class instance variables
     private String name;
     private double bestTime;
-
+    private int HousePoints;
+    
     public Player() {
+    }
+
+    public int getHousePoints() {
+        return HousePoints;
+    }
+
+    public void setHousePoints(int HousePoints) {
+        this.HousePoints = HousePoints;
     }
     
     

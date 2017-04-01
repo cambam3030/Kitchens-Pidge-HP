@@ -5,6 +5,9 @@
  */
 package byui.cit260.harryPotter.view;
 
+import byui.cit260.harryPotter.model.Inventory;
+import harrypotter.HarryPotter;
+
 /**
  *
  * @author chriskitchens
@@ -29,6 +32,8 @@ public class LocationOllivanders extends ViewMenu{
         switch(choice) {
             case "W": //obtain wand
                 console.println("\n You've obtained a wand! Now you're ready to start casting spells!");
+                Inventory[] inventory = HarryPotter.getCurrentGame().getInventory();
+                inventory[0].setStockAvailable(1);
                 return true;
             case "E": //exit
                 return true;

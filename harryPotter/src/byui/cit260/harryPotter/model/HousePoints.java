@@ -5,6 +5,7 @@
  */
 package byui.cit260.harryPotter.model;
 
+import harrypotter.HarryPotter;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -17,13 +18,15 @@ public class HousePoints implements Serializable {
     //class instance variable 
     private String house;
     private double amount;
+ 
+    public static int[] HousePoints = {HarryPotter.getPlayer().getHousePoints(), 100, 200, 300};
     
     public HousePoints(){
     }
     
     public HousePoints(String house, double amount){
         
-    }
+    }    
     
     public String getHouse() {
         return house;
