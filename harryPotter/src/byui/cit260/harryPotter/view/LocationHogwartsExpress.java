@@ -12,7 +12,12 @@ package byui.cit260.harryPotter.view;
 public class LocationHogwartsExpress extends ViewMenu{
     
     public LocationHogwartsExpress() {
-        super("");
+        super("\n You've found yourself on the Hogwarts Express with a one-way ticket"
+                + "\n to Hogwarts School of Witchcraft and Wizardry! Enjoy the ride!"
+                + "\n"
+                + "\n L - Look around"
+                + "\n N - Take a nap"
+                + "\n C - Have a Chocolate Frog");
     }
     
     @Override
@@ -22,7 +27,19 @@ public class LocationHogwartsExpress extends ViewMenu{
         boolean done = false;
         
         switch(choice) {
-            case "":
+            case "L": //look around
+                console.println("\n You see many other cabs along the train which contain passengers,"
+                        + "\n most likely students like yourself.");
+                break;
+            case "N": // take a nap
+                console.println("\n You awake abruptly and find you've arrived at Hogwarts. You race"
+                        + "\n off the train, ready for what awaits you.");
+                done = true;
+                break;
+            case "C": //have a chocolate frog
+                console.println("\n You open your Chocolate Frog to find a card of Albus Dumbledore inside!"
+                        + "\n The frog is also quite delicious.");
+                break;
             
             default:
                 this.console.println("\n*** Invalid selection *** Try again ***");

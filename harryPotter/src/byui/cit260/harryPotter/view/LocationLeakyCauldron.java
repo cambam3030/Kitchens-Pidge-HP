@@ -12,7 +12,14 @@ package byui.cit260.harryPotter.view;
 public class LocationLeakyCauldron extends ViewMenu{
     
     public LocationLeakyCauldron() {
-        super("");
+        super("\n Welcome to the Leaky Cauldron!"
+                + "\n"
+                + "\n You enter the bustling tavern to find it crowded but comfortable."
+                + "\n Settle in, rest a while, and enjoy a nice mug of Butter Beer!"
+                + "\n"
+                + "\n L - Look around"
+                + "\n D - Have a drink "
+                + "\n E - Exit");
     }
     
     @Override
@@ -22,7 +29,16 @@ public class LocationLeakyCauldron extends ViewMenu{
         boolean done = false;
         
         switch(choice) {
-            case "":
+            case "L": //look around
+                console.println("\n As you look around the tavern you spot a huddled figure"
+                        + "\n at the bar wearing a purple turban. I wonder what he's up to.");
+                break;
+            case "D": // drink
+                console.println("\n You order a Butter Beer and instantly take a large gulp."
+                        + "\n The creamy caramel beverage is ice cold and so refreshing.");
+                break;
+            case "E": // exit
+                return true;
             
             default:
                 this.console.println("\n*** Invalid selection *** Try again ***");

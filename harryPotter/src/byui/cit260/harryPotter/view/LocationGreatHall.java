@@ -12,7 +12,12 @@ package byui.cit260.harryPotter.view;
 public class LocationGreatHall extends ViewMenu{
     
     public LocationGreatHall() {
-        super("");
+        super("\n You enter the Great Hall and find it lined with tables filled with students."
+                + "\n The first year feast has begun! You take your seat alongside other students"
+                + "\n and begin piling food on your plate, starved from the trip."
+                + "\n"
+                + "\n E - stay and eat"
+                + "\n L - leave the great hall");
     }
     
     @Override
@@ -22,7 +27,12 @@ public class LocationGreatHall extends ViewMenu{
         boolean done = false;
         
         switch(choice) {
-            case "":
+            case "E": //eat
+                console.println("\n You fill your plate again and again with the most delicious food"
+                        + "\n repeatedly conjured before your eyes. You might be a little stuffed"
+                        + "\n for class tomorrow.");
+            case "L": //leave
+                return true;
             
             default:
                 this.console.println("\n*** Invalid selection *** Try again ***");

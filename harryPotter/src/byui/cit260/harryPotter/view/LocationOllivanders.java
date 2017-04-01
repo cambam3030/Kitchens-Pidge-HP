@@ -12,7 +12,12 @@ package byui.cit260.harryPotter.view;
 public class LocationOllivanders extends ViewMenu{
     
     public LocationOllivanders(){
-        super("");
+        super("\n Welcome to Ollivanders, the world renowned wand-maker's shop!"
+                + "\n Every witch and wizard needs a want to perform spells. This"
+                + "\n is an essential tool to have!"
+                + "\n"
+                + "\n W - obtain wand"
+                + "\n E - exit");
     }
     
     @Override
@@ -22,7 +27,11 @@ public class LocationOllivanders extends ViewMenu{
         boolean done = false;
         
         switch(choice) {
-            case "":
+            case "W": //obtain wand
+                console.println("\n You've obtained a wand! Now you're ready to start casting spells!");
+                return true;
+            case "E": //exit
+                return true;
             
             default:
                 this.console.println("\n*** Invalid selection *** Try again ***");
