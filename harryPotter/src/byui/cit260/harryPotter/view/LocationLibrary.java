@@ -17,10 +17,10 @@ package byui.cit260.harryPotter.view;
                 + "\n you could desire. Some books are locked away in the restricted "
                 + "\n section for your safety."
                 + "\n"
-                + "\n R Restricted Section"
-                + "\n HW Homework"
-                + "\n S Study with Ron"
-                + "\n E Exit");
+                + "\n R - Restricted Section"
+                + "\n HW - Homework"
+                + "\n S - Study with Ron"
+                + "\n E - Exit");
     }
     
     @Override
@@ -31,18 +31,21 @@ package byui.cit260.harryPotter.view;
         
         switch(choice) {
             case "R"://restricted section
-                console.println("\n You use your invisibilty cloak to enter the "
-                        + "\n restricted section. You have to cut your session short "
-                        + "\n though, because Peeves is floating near by and he "
+                console.println("\n You use your invisibilty cloak to enter the"
+                        + "\n restricted section. You have to cut your session short"
+                        + "\n though, because Peeves is floating near by and he"
                         + "\n is on to you.");
+                break;
             case "HW":
-                console.println("\n You chose to get an early start on your homework. "
+                console.println("\n You chose to get an early start on your homework."
                         + "\n Now you have the weekend to enjoy a trip to Hogsmead.");
+                break;
             case "S":
-                console.println("You chose to study with Ron. He and Hermione just "
-                        + "had a row, and he was getting pretty loud recounting "
-                        + "it to you. Madam Pince banned you both from the library for  "
-                        + "\nthe day. You will need to use the weekend to do homework.");
+                console.println("\n You chose to study with Ron. He and Hermione just"
+                        + "\n had a row, and he was getting pretty loud recounting"
+                        + "\n it to you. Madam Pince banned you both from the library for"
+                        + "\n the day. You will need to use the weekend to do homework.");
+                break;
             case "E":
                 return true;
             
