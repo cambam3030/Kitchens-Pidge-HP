@@ -18,7 +18,7 @@ public class Game implements Serializable{
     private Inventory[] inventory;
     private Map map;
     private Character character;
-    private int[] housePoint = HousePoints.housePoints;
+    private HousePoints housepoints;
 
     public Game() {
     }
@@ -71,13 +71,15 @@ public class Game implements Serializable{
         this.player = player;
     }
 
-    public int[] getHousePoint() {
-        return housePoint;
+    public HousePoints getHousepoints() {
+        return housepoints;
     }
 
-    public void setHousePoint(int[] housePoint) {
-        this.housePoint = housePoint;
+    public void setHousepoints(HousePoints housepoints) {
+        this.housepoints = housepoints;
     }
+
+
     
     
     

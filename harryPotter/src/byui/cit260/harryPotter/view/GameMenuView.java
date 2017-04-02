@@ -33,7 +33,7 @@ public class GameMenuView extends ViewMenu{
                + "\n T - Travel to a location within the game"
                + "\n I - Inventory"
                + "\n SP- Spells"
-               + "\n C - Characters Met"
+               + "\n C - Characters"
                + "\n HP- View House Points"
                + "\n M - Map"
                + "\n S - Save"

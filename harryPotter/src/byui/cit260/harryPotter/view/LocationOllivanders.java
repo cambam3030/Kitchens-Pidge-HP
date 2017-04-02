@@ -39,7 +39,9 @@ public class LocationOllivanders extends ViewMenu{
                 int points = HarryPotter.getPlayer().getHousePoints();
                 points = points + 50;
                 HarryPotter.getPlayer().setHousePoints(points);                
-                HousePoints.housePoints[0] = points;
+                
+                int[] pointsArray = HousePoints.housePoints;
+                pointsArray[0] = points;
                 
                 return true;
             case "E": //exit
