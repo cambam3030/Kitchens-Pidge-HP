@@ -39,6 +39,8 @@ public class LocationDungeon extends ViewCalc {
     }
       
     public LocationDungeon() {
+        
+        
         displayMessage = "\n Welcome to the Dungeons! Today we're going"
                 + "\n to calculate the does of Poly Juice potion needed to"
                 + "\n disguise your character based on their weight and the"

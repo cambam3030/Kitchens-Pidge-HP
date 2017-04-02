@@ -12,7 +12,13 @@ package byui.cit260.harryPotter.view;
     public class LocationDormitory extends ViewMenu{
     
     public LocationDormitory(){
-        super("");
+        super("\n You enter the Griffindor Dormitory. Its been a long trip and "
+                + "\n you've had a lot to eat. Meet your roommates and get some "
+                + "\n sleep! Classes start early tomorrow. "
+                + "\n"
+                + "\n RM - Meet your roommates"
+                + "\n S Get somme sleep"
+                + "\n L - leave the Dormitory");
     }
     
     @Override
@@ -22,7 +28,13 @@ package byui.cit260.harryPotter.view;
         boolean done = false;
         
         switch(choice) {
-            case "":
+            case "RM":
+                console.println("\n Your roommates are Harry, Ron, and Neville.");
+                break;
+            case "S":
+                console.println("\n zzzzzzZZZZZZZzzzzzzzzZZZZZzzzzzz");
+            case "L"://leave
+                return true;
             
             default:
                 this.console.println("\n*** Invalid selection *** Try again ***");
