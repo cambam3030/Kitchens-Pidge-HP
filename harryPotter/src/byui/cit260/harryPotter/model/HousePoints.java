@@ -19,8 +19,8 @@ public class HousePoints implements Serializable {
     private String house;
     private double amount;
  
-    public static int[] HousePoints = {HarryPotter.getPlayer().getHousePoints(), 100, 200, 300};
-    
+    public static int[] housePoints = {HarryPotter.getPlayer().getHousePoints(), 100, 200, 300};
+        
     public HousePoints(){
     }
     

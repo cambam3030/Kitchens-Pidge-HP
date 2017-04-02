@@ -18,6 +18,7 @@ public class Game implements Serializable{
     private Inventory[] inventory;
     private Map map;
     private Character character;
+    private int[] housePoint = HousePoints.housePoints;
 
     public Game() {
     }
@@ -69,6 +70,16 @@ public class Game implements Serializable{
     public void setPlayer(Player player) {
         this.player = player;
     }
+
+    public int[] getHousePoint() {
+        return housePoint;
+    }
+
+    public void setHousePoint(int[] housePoint) {
+        this.housePoint = housePoint;
+    }
+    
+    
     
     @Override
     public int hashCode() {

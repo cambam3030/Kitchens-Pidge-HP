@@ -5,6 +5,7 @@
  */
 package byui.cit260.harryPotter.view;
 
+import byui.cit260.harryPotter.model.HousePoints;
 import byui.cit260.harryPotter.model.Inventory;
 import harrypotter.HarryPotter;
 
@@ -34,6 +35,12 @@ public class LocationOllivanders extends ViewMenu{
                 console.println("\n You've obtained a wand! Now you're ready to start casting spells!");
                 Inventory[] inventory = HarryPotter.getCurrentGame().getInventory();
                 inventory[0].setStockAvailable(1);
+                
+                int points = HarryPotter.getPlayer().getHousePoints();
+                points = points + 50;
+                HarryPotter.getPlayer().setHousePoints(points);                
+                HousePoints.housePoints[0] = points;
+                
                 return true;
             case "E": //exit
                 return true;

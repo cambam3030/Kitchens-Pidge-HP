@@ -153,7 +153,12 @@ public class GameMenuView extends ViewMenu{
     }
     
     private void housePoints() {
-        GameControl.submitHousePoints();
+        console.println("\n ---*** Current House Points ***---"
+                + "\n Gryffindor: " + HousePoints.housePoints[0] + "<-- Player"
+                + "\n Slytherin: " + HousePoints.housePoints[1]
+                + "\n Ravenclaw: " + HousePoints.housePoints[2]
+                + "\n HufflePuff: " + HousePoints.housePoints[3]
+                );
     }
     
     private void helpMenu() {

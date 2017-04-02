@@ -6,6 +6,7 @@
 package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.control.GameControl;
+import byui.cit260.harryPotter.model.HousePoints;
 import harrypotter.HarryPotter;
 
 
@@ -98,6 +99,8 @@ public class MainMenuView extends ViewMenu {
         }
         console.println("\n Currently playing as: ");
         console.println(HarryPotter.getCurrentGame().getPlayer().getName());
+        console.println("\n Current House Points: ");
+        console.println(HarryPotter.getCurrentGame().getPlayer().getHousePoints());
         //display te game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
