@@ -12,7 +12,13 @@ package byui.cit260.harryPotter.view;
     public class LocationHerbology extends ViewMenu{
     
     public LocationHerbology(){
-        super("");
+        super("Welcome to Herbology. Toady we are replanting baby Mandrakes. Be "
+                + "\n sure to put your ear muffs on tightly."
+                + "\n"
+                + "\n N Choose Neville as your partner"
+                + "\n H Choose Hermione as our partner"
+                + "\n R Choos Ron as your partner"
+                + "\n E Exit");
     }
     
     @Override
@@ -22,8 +28,22 @@ package byui.cit260.harryPotter.view;
         boolean done = false;
         
         switch(choice) {
-            case "":
-            
+            case "N":
+                console.println("Neville tripped while carring his mandrake pot "
+                        + "\n over to your table and dropped it. Professor Sprout "
+                        + "\n was keeping a close eye on Neville, so she was able "
+                        + "\n to act quickly before the pot had a chance to shatter.");
+            case "H":
+                console.println("Hermione executed the assigment perfectly while you  "
+                        + "\n watched. You both received top marks for the class");
+            case "R":
+                console.println("You and Ron were too busy talking and you failed "
+                        + "\n to get your earmuffs on in time. Thankfully the "
+                        + "\n mandrakes are still young, but you both were knocked "
+                        + "\n unconcious for the remained of the class and failed "
+                        + "\n the assignment.");
+            case "E":
+                return true;    
             default:
                 this.console.println("\n*** Invalid selection *** Try again ***");
                 break;
