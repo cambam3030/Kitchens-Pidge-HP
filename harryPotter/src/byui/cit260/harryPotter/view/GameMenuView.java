@@ -174,9 +174,9 @@ public class GameMenuView extends ViewMenu{
         
         this.console.println("\n     MAP     ");
         line = new StringBuilder("                                      ");
-        line.insert(0, "DESCRIPTION");
+        /*line.insert(0, "DESCRIPTION");
         line.insert(20,"ROW");
-        line.insert(30, "COLUMN");
+        line.insert(30, "COLUMN");*/
         
         this.console.println(line.toString());
         //For every row
