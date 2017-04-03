@@ -19,12 +19,25 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 
 /**
  *
  * @author Cami
  */
 public class GameControl {
+    
+    private static PrintWriter inventoryFile = null;
+
+    public static PrintWriter getInventoryFile() {
+        return inventoryFile;
+    }
+
+    public static void setInventoryFile(PrintWriter inventoryFile) {
+        GameControl.inventoryFile = inventoryFile;
+    }
+    
+    
 
     public static Player createPlayer(String name) {
        
@@ -137,6 +150,49 @@ public class GameControl {
        catch(Exception e){
            throw new GameControlException(e.getMessage());
        }
+    }
+    
+    public static void printItemsList(Inventory[] items){
+        try{
+            String filePath = "inventory.txt";
+            GameControl.inventoryFile = new PrintWriter(filePath);
+
+            StringBuilder line;
+            Game game = HarryPotter.getCurrentGame();
+            Inventory[] inventory = game.getInventory();
+        
+            inventoryFile.println("\n  LIST OF INVENTORY ITEMS");
+            line = new StringBuilder("                                    ");
+            line.insert(0, "DESCRIPTION");
+            line.insert(20, "REQUIRED");   
+            line.insert(30, "IN STOCK");
+            inventoryFile.println(line.toString());
+        
+            //for each inventory item 
+            for (Inventory item : inventory){
+            line = new StringBuilder("                                       ");
+            line.insert(0,item.getName());
+            line.insert(23,item.getAmountNeeded());
+            line.insert(33, item.getStockAvailable());
+            
+            inventoryFile.println(line.toString());
+            }
+
+        } catch(Exception e) {
+                System.out.println("Exception" + e.toString() +
+                    "\nCause: " + e.getCause() +
+                    "\nMessage: " + e.getMessage());
+
+                e.printStackTrace();
+        } finally{
+            try{
+                if (GameControl.inventoryFile != null)
+                    GameControl.inventoryFile.close();
+                } catch (Exception ex) {
+                    GameControlException.display(HarryPotter.class.getName(), "Error closing files");
+                    return;
+            }
+        }
     }
 
     public static void printSpellsList(String[] printSpells, String filePath)

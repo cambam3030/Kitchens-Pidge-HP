@@ -5,11 +5,27 @@
  */
 package byui.cit260.harryPotter.exceptions;
 
+import harrypotter.HarryPotter;
+import java.io.PrintWriter;
+
 /**
  *
  * @author chriskitchens
  */
 public class GameControlException extends Exception{
+    private static final PrintWriter errorFile = HarryPotter.getOutFile();
+    private static final PrintWriter logFile = HarryPotter.getLogFile();
+    
+    public static void display(String className, String errorMessage){
+        
+        errorFile.println(
+        "-----------------------------------------------------------------"
+        + "\n - ERROR - " + errorMessage
+        +"\n---------------------------------------------------------------");
+        //log error
+        logFile.println(className + " - " + errorMessage);
+        //logFile.flush();
+    }
 
     public GameControlException() {
     }

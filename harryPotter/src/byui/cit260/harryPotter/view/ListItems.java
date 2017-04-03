@@ -6,6 +6,7 @@
 package byui.cit260.harryPotter.view;
 
 import byui.cit260.harryPotter.control.GameControl;
+import byui.cit260.harryPotter.model.Game;
 import byui.cit260.harryPotter.model.Inventory;
 import harrypotter.HarryPotter;
 
@@ -14,7 +15,7 @@ import harrypotter.HarryPotter;
  * @author chriskitchens
  */
 public class ListItems extends ViewMenu {
-       
+         
     public ListItems() {
         super("\n The following items will be seen throughout the game:"
                 + "\n 1. Wand"
@@ -60,10 +61,10 @@ public class ListItems extends ViewMenu {
     }
 
     private void printItems() {
-        String filePath = getInput("\n*\nEnter the file path for your saved game.");
-        StringBuilder line;
         
-        String[] items = Inventory.printItems();
+        StringBuilder line;
+        Game game = HarryPotter.getCurrentGame();
+        Inventory[] items = game.getInventory();
         this.console.println("\n  LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                                    ");
         line.insert(0, "DESCRIPTION");
@@ -72,20 +73,22 @@ public class ListItems extends ViewMenu {
         this.console.println(line.toString());
         
         //for each inventory item 
-        for (String item : items){
+        for (Inventory item : items){
             line = new StringBuilder("                                       ");
-            line.insert(0,item);
+            line.insert(0,item.getName());
+            line.insert(23,item.getAmountNeeded());
+            line.insert(33, item.getStockAvailable());
             
             
             
-            //DISPAY the line
+            //DISPLAY the line
             this.console.println(line.toString());
         }
         
         
         try{
             //save the game to a specified file
-            GameControl.printItemList(items, filePath);
+            GameControl.printItemsList(items);
             console.println("\nItem list successfully printed.");
         }catch (Exception ex){
             ErrorView.display("ListItems", ex.getMessage());

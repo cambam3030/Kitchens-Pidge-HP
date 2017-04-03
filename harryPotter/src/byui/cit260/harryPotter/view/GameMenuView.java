@@ -113,7 +113,7 @@ public class GameMenuView extends ViewMenu{
             line.insert(23,item.getAmountNeeded());
             line.insert(33, item.getStockAvailable());
             
-            //DISPAY the line
+            //DISPLAY the line
             this.console.println(line.toString());
         }
     }

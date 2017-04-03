@@ -1,0 +1,18 @@
+
+  LIST OF INVENTORY ITEMS
+DESCRIPTION         REQUIRED  IN STOCK                         
+wand                   1.0       0.0             
+invisibility cloak     1.0       0.0                           
+time turner            1.0       0.0                    
+owl                    1.0       0.0            
+poly juice potion      1.0       0.0                          
+felix felicis          1.0       0.0                      
+mandrake root          1.0       0.0                      
+bezoar                 1.0       0.0               
+dittany                1.0       0.0                
+dragons blood          1.0       0.0                      
+broomstick             1.0       0.0                   
+potions book           1.0       0.0                     
+cauldron               1.0       0.0                 
+library pass           1.0       0.0                     
+snitch                 1.0       0.0               
