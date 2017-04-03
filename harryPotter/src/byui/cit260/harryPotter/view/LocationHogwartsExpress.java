@@ -17,7 +17,8 @@ public class LocationHogwartsExpress extends ViewMenu{
                 + "\n"
                 + "\n L - Look around"
                 + "\n N - Take a nap"
-                + "\n C - Have a Chocolate Frog");
+                + "\n C - Have a Chocolate Frog"
+                + "\n E - Exit the Hogwarts Express");
     }
     
     @Override
@@ -40,7 +41,8 @@ public class LocationHogwartsExpress extends ViewMenu{
                 console.println("\n You open your Chocolate Frog to find a card of Albus Dumbledore inside!"
                         + "\n The frog is also quite delicious.");
                 break;
-            
+            case "E":
+                return true;
             default:
                 this.console.println("\n*** Invalid selection *** Try again ***");
                 break;
